@@ -62,7 +62,7 @@
             <div class="col-lg-6">
                 <div class="card">
                     <div class="card-body">
-                        <form class="row g-3 needs-validation" novalidate action="{{route('simpan-produk')}}" method="POST" enctype="multipart/form-data">
+                        <form class="row g-3 needs-validation" novalidate action="https://pisangcandi-umkminfo.vercel.app/simpan-produk" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="col-md-12 mb-2">
                                 <label for="nama_produk">Nama Produk</label>
