@@ -21,7 +21,7 @@
             "dest": "/public/img/$1"
         },
         {
-            "src": "/produk/(.*)",
+            "src": "/Produk/(.*)",
             "dest": "/public/Produk/$1"
         },
         {
