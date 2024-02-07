@@ -26,7 +26,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-3">
-                                <img src="/Produk/' . session('umkm_data')['profile_umkm']" alt="Profile UMKM">
+                                <img src="/Produk/' . session('umkm_data')['profile_umkm']'" alt="Profile UMKM">
                             </div>
                             <div class="col">
                                 <form action="">

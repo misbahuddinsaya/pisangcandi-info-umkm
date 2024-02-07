@@ -2,12 +2,12 @@
 @section('title', 'Produk UMKM')
 @section('content')
 @include('sweetalert::alert')
-<section class="breadcrumb-section set-bg" data-setbg="{{ asset('assets/img/breadcrumb.jpg') }}">
+<section class="breadcrumb-section set-bg" data-setbg="/img/breadcrumb.jpg">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center profile-section">
                 <div class="profile-picture">
-                    <img src="/Produk/' . $detailUmkm['profile_umkm']" alt="UMKM Image">
+                    <img src="/Produk/' . $detailUmkm['profile_umkm']'" alt="UMKM Image">
                 </div>
 
             </div>
