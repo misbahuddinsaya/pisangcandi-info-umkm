@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Services\FirebaseServices;
 use Illuminate\Support\Facades\Session;
+use Kreait\Firebase\Factory;
+use Kreait\Firebase\Storage;
 
 class PelakuController extends Controller
 {
@@ -13,8 +15,9 @@ class PelakuController extends Controller
     {
         $this->database = FirebaseServices::connect();
     }
-    
-    public function index() {
+
+    public function index()
+    {
         // Ambil data umkm dari sesi login
         $umkmData = Session::get('umkm_data');
 
@@ -72,8 +75,24 @@ class PelakuController extends Controller
         $namaProdukBaru = str_replace(' ', '', $request->namaProduk);
 
         $namaFoto = 'UMKM1-' . $namaProdukBaru . '.' . $uploadedFile->getClientOriginalExtension();
-        $uploadedFile->move(public_path('Produk/'), $namaFoto);
-        // dd($newKode);
+
+
+        // Mendapatkan objek penyimpanan Firebase dari koneksi Firebase
+        $factory = (new Factory)->withServiceAccount('../firebase_credentials.json');
+
+        // Membuat objek penyimpanan Firebase
+        $storage = $factory->createStorage();;
+
+        // Unggah file ke Firebase Storage
+        $file = fopen('/path/to/local/image.jpg', 'r');
+        $bucket = $storage->getBucket('gs://umkm-9256e.appspot.com');
+        $object = $bucket->upload($file, [
+            'name' => 'images/' . $namaFoto // Sesuaikan dengan path yang Anda inginkan di Firebase Storage
+        ]);
+        fclose($file);
+
+        // Dapatkan URL file yang diunggah
+        $fileUrl = $object->signedUrl(new \DateTime('tomorrow'));
         $newData = [
             $newKode => [
                 'kode_produk' => $newKode,
