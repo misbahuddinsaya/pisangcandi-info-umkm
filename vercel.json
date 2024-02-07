@@ -1,19 +1,34 @@
 {
     "version": 2,
-      "framework": null,
     "functions": {
-        "api/index.php": { "runtime": "vercel-php@0.6.0" },
-        "public/": { "runtime": "vercel-php@0.6.0" }
+        "api/index.php": { "runtime": "vercel-php@0.6.0" }
     },
     "routes": [
         {
-            "src": "/(css|js|vendor|assets|fonts|img|Produk|build|sass)/(.*)",
-            "dest": "public/"
+            "src": "/css/(.*)",
+            "dest": "/public/css/$1"
         },
         {
-        "src": "/(.*)",
-        "dest": "/api/index.php"
-    }],
+            "src": "/js/(.*)",
+            "dest": "/public/js/$1"
+        },
+        {
+            "src": "/fonts/(.*)",
+            "dest": "/public/fonts/$1"
+        },
+        {
+            "src": "/img/(.*)",
+            "dest": "/public/img/$1"
+        },
+        {
+            "src": "/products/(.*)",
+            "dest": "/public/products/$1"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/api/index.php"
+        }
+    ],
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "true",
