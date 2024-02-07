@@ -17,7 +17,6 @@
             </div>
             <div class="col-md-3 col-sm-12 text-center">
                 <div class="breadcrumb__text">
-
                 </div>
             </div>
         </div>
