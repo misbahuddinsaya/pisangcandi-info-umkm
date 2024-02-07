@@ -78,7 +78,7 @@ class PelakuController extends Controller
 
 
         // Mendapatkan objek penyimpanan Firebase dari koneksi Firebase
-        $factory = (new Factory)->withServiceAccount('firebase_credentials.json');
+        $factory = (new Factory)->withServiceAccount('/firebase_credentials.json');
 
         // Membuat objek penyimpanan Firebase
         $storage = $factory->createStorage();;
