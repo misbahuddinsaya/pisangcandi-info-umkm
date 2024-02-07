@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-lg-12 text-center profile-section">
                 <div class="profile-picture">
-                    <img src="/Produk/<?= $umkmData['profile_umkm']; ?>" alt="UMKM Image">
+                    <img src="/Produk/<?= $detailUmkm['profile_umkm']; ?>" alt="UMKM Image">
                 </div>
 
             </div>
