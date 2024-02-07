@@ -8,7 +8,7 @@
             </ul>
         </div>
         <div class="product__item__text">
-            <h5>{{ $item['nama_produk'] }}</h5>
+            <h5><a href="{{ route('produk-info', ['id' => $item['kode_produk']]) }}">{{ $item['nama_produk'] }}</a></h5>
         </div>
     </div>
 </div>
