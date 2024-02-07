@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('title', 'Home')
 @section('content')
-<section class="breadcrumb-section-dash set-bg" data-setbg=" {{ asset('img/breadcrumb-dashboard.jpg') }} ">
+<section class="breadcrumb-section-dash set-bg" data-setbg=" /img/breadcrumb-dashboard.jpg ">
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-12 text-center">
@@ -22,7 +22,7 @@
 </section>
 <section class="hero">
     <div class="container">
-        <div class="hero__item set-bg" data-setbg=" {{ asset('img/hero/banner.jpg') }} ">
+        <div class="hero__item set-bg" data-setbg=" /img/hero/banner.jpg">
             <div class="hero__text">
                 <span>UMKM SAYA</span>
                 <h2>UMKM RW. 04 <br />PISANG COKLAT</h2>

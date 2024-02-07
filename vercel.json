@@ -22,7 +22,15 @@
         },
         {
             "src": "/products/(.*)",
-            "dest": "/public/products/$1"
+            "dest": "/public/Produk/$1"
+        },
+        {
+            "src": "/products/(.*)",
+            "dest": "/public/sass/$1"
+        },
+        {
+            "src": "/products/(.*)",
+            "dest": "/public/vendor/$1"
         },
         {
             "src": "/(.*)",

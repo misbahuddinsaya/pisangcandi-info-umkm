@@ -2,7 +2,7 @@
 @section('title', 'Daftar UMKM')
 @section('content')
 @include('sweetalert::alert')
-<section class="breadcrumb-section set-bg" data-setbg=" {{ asset('assets/img/breadcrumb.jpg') }} ">
+<section class="breadcrumb-section set-bg" data-setbg="/img/breadcrumb.jpg">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">

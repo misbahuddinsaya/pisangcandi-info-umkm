@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('title', 'Produk UMKM')
 @section('content')
-<section class="breadcrumb-section set-bg" data-setbg=" {{ asset('assets/img/breadcrumb.jpg') }} ">
+<section class="breadcrumb-section set-bg" data-setbg="/img/breadcrumb.jpg">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
@@ -26,7 +26,7 @@
             <div class="col-lg-6 col-md-6">
                 <div class="product__details__pic">
                     <div class="product__details__pic__item">
-                        <img class="product__details__pic__item--large" src="{{ asset('Produk/' . $produk['foto_produk']) }}" alt="">
+                        <img class="product__details__pic__item--large" src="/Produk/' . $produk['foto_produk']" alt="">
                     </div>
                     <div class="product__details__pic__slider owl-carousel">
                     </div>

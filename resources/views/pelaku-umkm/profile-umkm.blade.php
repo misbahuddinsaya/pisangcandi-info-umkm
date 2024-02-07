@@ -2,7 +2,7 @@
 @section('title', 'Produk UMKM')
 @section('content')
 @include('sweetalert::alert')
-<section class="breadcrumb-section set-bg" data-setbg=" {{ asset('assets/img/breadcrumb.jpg') }} ">
+<section class="breadcrumb-section set-bg" data-setbg="/img/breadcrumb.jpg">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
@@ -26,7 +26,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-3">
-                                <img src="{{ asset('Produk/' . session('umkm_data')['profile_umkm']) }}" alt="Profile UMKM">
+                                <img src="/Produk/' . session('umkm_data')['profile_umkm']" alt="Profile UMKM">
                             </div>
                             <div class="col">
                                 <form action="">
