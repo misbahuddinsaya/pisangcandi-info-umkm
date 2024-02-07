@@ -21,15 +21,15 @@
             "dest": "/public/img/$1"
         },
         {
-            "src": "/products/(.*)",
+            "src": "/produk/(.*)",
             "dest": "/public/Produk/$1"
         },
         {
-            "src": "/products/(.*)",
+            "src": "/sass/(.*)",
             "dest": "/public/sass/$1"
         },
         {
-            "src": "/products/(.*)",
+            "src": "/vendor/(.*)",
             "dest": "/public/vendor/$1"
         },
         {
