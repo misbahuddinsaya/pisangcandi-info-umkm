@@ -78,10 +78,10 @@ class PelakuController extends Controller
 
 
         // Mendapatkan objek penyimpanan Firebase dari koneksi Firebase
-        $factory = (new Factory)->withServiceAccount('/firebase_credentials.json');
+        $firebase = (new Factory)->withServiceAccount('./firebase_credentials.json');
 
         // Membuat objek penyimpanan Firebase
-        $storage = $factory->createStorage();;
+        $storage = $firebase->createStorage();
 
         // Unggah file ke Firebase Storage
         $file = fopen('/path/to/local/image.jpg', 'r');
