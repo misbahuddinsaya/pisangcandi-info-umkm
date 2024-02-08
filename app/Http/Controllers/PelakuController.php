@@ -89,7 +89,12 @@ class PelakuController extends Controller
                 'name' => 'Produk/' . $namaFoto
             ]
         );
+        // Ambil data umkm dari sesi login
+        $umkmData = Session::get('umkm_data');
 
+        // Pastikan kode_umkm ada dalam data umkm
+        $kodeUmkm = $umkmData['kode_umkm'] ?? null;
+        
         // Dapatkan URL file yang diunggah
         $fileUrl = $object->signedUrl(new \DateTime('tomorrow'));
         // dd($newKode);
@@ -102,7 +107,7 @@ class PelakuController extends Controller
                 'harga' => $request->harga_produk,
                 'keterangan' => $request->keterangan_produk,
                 'foto_produk' => $fileUrl,
-                'kode_umkm' => 'UMKM1',
+                'kode_umkm' => $kodeUmkm,
             ]
         ];
 
