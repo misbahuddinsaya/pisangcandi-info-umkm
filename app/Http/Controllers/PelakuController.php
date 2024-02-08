@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Services\FirebaseServices;
 use Illuminate\Support\Facades\Session;
+use Kreait\Firebase\Storage;
+use Kreait\Firebase\Factory;
+use Google\Cloud\Storage\StorageClient;
+use Kreait\Firebase\ServiceAccount;
 
 class PelakuController extends Controller
 {
@@ -71,9 +75,23 @@ class PelakuController extends Controller
         // Handle file upload
         $uploadedFile = $request->file('file');
         $namaProdukBaru = str_replace(' ', '', $request->namaProduk);
-
         $namaFoto = 'UMKM1-' . $namaProdukBaru . '.' . $uploadedFile->getClientOriginalExtension();
-        $uploadedFile->move('/var/task/user/public/Produk/', $namaFoto);
+
+        // Konfigurasi Firebase
+        $factory = (new Factory)->withServiceAccount(__DIR__ . './firebase_credentials.json');
+
+        // Simpan file ke Firebase Storage
+        $storage = $factory->createStorage();
+        $bucket = $storage->getBucket('gs://umkm-9256e.appspot.com');
+        $object = $bucket->upload(
+            fopen($uploadedFile->getRealPath(), 'r'),
+            [
+                'name' => 'Produk/' . $namaFoto
+            ]
+        );
+
+        // Dapatkan URL file yang diunggah
+        $fileUrl = $object->signedUrl(new \DateTime('tomorrow'));
         // dd($newKode);
         $newData = [
             $newKode => [
@@ -83,7 +101,7 @@ class PelakuController extends Controller
                 'kategori' => $request->kategori_produk,
                 'harga' => $request->harga_produk,
                 'keterangan' => $request->keterangan_produk,
-                'foto_produk' => $namaFoto,
+                'foto_produk' => $fileUrl,
                 'kode_umkm' => 'UMKM1',
             ]
         ];
