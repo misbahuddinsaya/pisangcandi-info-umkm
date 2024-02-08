@@ -64,7 +64,7 @@ class AdminController extends Controller
                 'jumlah_produk' => $request->jumlah_produk,
                 'alamat' => $request->alamat,
                 'nomer_tlp' => $request->no_tlp,
-                'profile_umkm' => $namaFoto,
+                'profile_umkm' => $fileUrl,
                 'kode_user' => 'USER1',
             ]
         ];
