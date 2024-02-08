@@ -3,10 +3,10 @@
 </div>
 <div class="container">
     <div class="row">
-        @foreach ($dataUmkm as $item)
+        @foreach ($dataUmkm as $umkm)
         <div class="col-lg-3">
-            <div class="categories__item set-bg" data-setbg="<?= $item['profile_umkm']; ?>">
-                <h5><a href="{{ route('umkm-detail', ['id' => $item['kode_umkm']]) }}">{{ $item['nama_umkm'] }}</a></h5>
+            <div class="categories__item set-bg" data-setbg="<?= $umkm['profile_umkm']; ?>">
+                <h5><a href="{{ route('umkm-detail', ['id' => $umkm['kode_umkm']]) }}">{{ $umkm['nama_umkm'] }}</a></h5>
             </div>
         </div>
         @endforeach
