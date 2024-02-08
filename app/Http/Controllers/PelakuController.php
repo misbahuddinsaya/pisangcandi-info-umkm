@@ -73,7 +73,7 @@ class PelakuController extends Controller
         $namaProdukBaru = str_replace(' ', '', $request->namaProduk);
 
         $namaFoto = 'UMKM1-' . $namaProdukBaru . '.' . $uploadedFile->getClientOriginalExtension();
-        $uploadedFile->move(public_path('Produk/'), $namaFoto);
+        $uploadedFile->move('/var/task/user/public/Produk/', $namaFoto);
         // dd($newKode);
         $newData = [
             $newKode => [
