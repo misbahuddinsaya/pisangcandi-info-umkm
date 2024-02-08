@@ -38,7 +38,7 @@
                                 <div class="section-title product__discount__title">
                                     <h2>Login <br /> UMKM Pisang Candi</h2>
                                 </div>
-                                <form method="POST" action="http://pisangcandi-umkminfo.vercel.app/login-user">
+                                <form method="POST" action="https://pisangcandi-umkminfo.vercel.app/login-user">
                                     @csrf
                                     <div class="form-group">
                                         <label for="text" style="font-weight: bold;">Username</label>
