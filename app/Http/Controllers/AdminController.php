@@ -36,10 +36,23 @@ class AdminController extends Controller
         $newKode = $this->generateNewCode($lastKode);
         // Handle file upload
         $uploadedFile = $request->file('file');
-        $namaUmkmBaru = str_replace(' ', '', $request->namaUmkm);
+        $namaProdukBaru = str_replace(' ', '', $request->namaProduk);
+        $namaFoto = 'UMKM-' . $namaProdukBaru . '.' . $uploadedFile->getClientOriginalExtension();
 
-        $namaFoto = 'PPUMKM-' . $namaUmkmBaru . '.' . $uploadedFile->getClientOriginalExtension();
-        $uploadedFile->move(public_path('Produk/'), $namaFoto);
+        // Konfigurasi Firebase
+        $factory = (new Factory)->withServiceAccount(__DIR__ . '/firebase_credentials.json');
+
+        // Simpan file ke Firebase Storage
+        $storage = $factory->createStorage();
+        $bucket = $storage->getBucket('umkm-9256e.appspot.com');
+        $object = $bucket->upload(
+            fopen($uploadedFile->getRealPath(), 'r'),
+            [
+                'name' => 'Umkm/' . $namaFoto
+            ]
+        );
+        
+        $fileUrl = $object->signedUrl(new \DateTime('tomorrow'));
         // dd($newKode);
         $newData = [
             $newKode => [
