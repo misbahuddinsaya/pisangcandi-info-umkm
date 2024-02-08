@@ -78,7 +78,7 @@ class PelakuController extends Controller
         $namaFoto = 'UMKM1-' . $namaProdukBaru . '.' . $uploadedFile->getClientOriginalExtension();
 
         // Konfigurasi Firebase
-        $factory = (new Factory)->withServiceAccount(__DIR__ . './firebase_credentials.json');
+        $factory = (new Factory)->withServiceAccount(__DIR__ . '/firebase_credentials.json');
 
         // Simpan file ke Firebase Storage
         $storage = $factory->createStorage();
