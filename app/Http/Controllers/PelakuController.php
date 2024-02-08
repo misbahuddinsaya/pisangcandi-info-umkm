@@ -82,7 +82,7 @@ class PelakuController extends Controller
 
         // Simpan file ke Firebase Storage
         $storage = $factory->createStorage();
-        $bucket = $storage->getBucket('gs://umkm-9256e.appspot.com');
+        $bucket = $storage->getBucket('umkm-9256e.appspot.com');
         $object = $bucket->upload(
             fopen($uploadedFile->getRealPath(), 'r'),
             [
