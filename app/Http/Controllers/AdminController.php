@@ -55,7 +55,7 @@ class AdminController extends Controller
             ]
         );
         
-        $fileUrl = $object->signedUrl(new \DateTime('tomorrow'));
+        $fileUrl = $object->signedUrl(new \DateTime('+10 years')); 
         // dd($newKode);
         $newData = [
             $newKode => [

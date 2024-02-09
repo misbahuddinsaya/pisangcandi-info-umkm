@@ -96,7 +96,7 @@ class PelakuController extends Controller
         $kodeUmkm = $umkmData['kode_umkm'] ?? null;
 
         // Dapatkan URL file yang diunggah
-        $fileUrl = $object->signedUrl(new \DateTime('tomorrow'));
+        $fileUrl = $object->signedUrl(new \DateTime('+10 years')); 
         // dd($newKode);
         $newData = [
             $newKode => [
