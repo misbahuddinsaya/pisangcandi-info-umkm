@@ -50,7 +50,7 @@
                 <div class="col-lg-5 col-md-5">
                     <div class="filter__sort">
                         <span>Filter :</span>
-                        <form action="{{ route('produk-UMKM.filter') }}" method="GET" id="filterForm">
+                        <form action="https://pisangcandi-umkminfo.vercel.app/produk-UMKM/filter" method="GET" id="filterForm">
                             <select name="kategori" onchange="submitForm()">
                                 <option value="0" selected>Semua</option>
                                 @foreach ($dataKategori as $kategori)
