@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('title', 'Home')
 @section('content')
-<section class="breadcrumb-section-dash set-bg" data-setbg=" /img/breadcrumb-dashboard.jpg ">
+<section class="breadcrumb-section-dash set-bg" data-setbg=" /img/breadcrumb-dashboard.png ">
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-12 text-center">
