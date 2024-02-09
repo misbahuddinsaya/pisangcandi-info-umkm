@@ -39,7 +39,7 @@
         </div>
         <div class="hero__search">
             <div class="hero__search__form">
-                <form action="{{ route('produk-search') }}">
+                <form action="https://pisangcandi-umkminfo.vercel.app/produk-UMKM/search">
                     <input type="text" placeholder="Cari Produk" name="search">
                     <button type="submit" class="site-btn">CARI</button>
                 </form>
