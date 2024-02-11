@@ -63,11 +63,10 @@ class ProdukKonsumen extends Controller
             });
         }
 
-        $totalProduk = count($dataProduk);
+
 
         return view('konsumen.produk-konsumen', [
             'dataProduk' => $dataProduk,
-            'totalProduk' => $totalProduk,
             'dataKategori' => $dataKategori,
             'selectedKategori' => $selectedKategori, // Untuk menjaga selected option di dropdown
         ]);
