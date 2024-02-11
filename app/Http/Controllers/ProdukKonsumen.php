@@ -63,7 +63,7 @@ class ProdukKonsumen extends Controller
             });
         }
 
-        $totalProduk = count($dataProduk);
+        $totalProduk = is_array($dataProduk) ? count($dataProduk) : 0;
 
         return view('konsumen.produk-konsumen', [
             'dataProduk' => $dataProduk,
