@@ -20,7 +20,7 @@
 <section class="produk-add mt-5 mb-5">
     <div class="container-produk-add">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-6">
                 <div class="card">
                     <div class="card-header primary-btn">Tambah UMKM</div>
                     <div class="card-body">
@@ -54,7 +54,37 @@
                         </div>
                     </div>
                 </div>
-
+            </div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header primary-btn">Tambah User</div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <form action="{{route('simpan-user')}}" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    <div class="mb-2">
+                                        <label for="namaUmkm" class="form-label">Nama User</label>
+                                        <input type="text" class="form-control" id="nama_user" placeholder="" name="nama_user" value="">
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="alamat" class="form-label">Username</label>
+                                        <input type="text" class="form-control" id="username" placeholder="" name="username" value="">
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="no_tlp" class="form-label">Password</label>
+                                        <input type="password" class="form-control" id="password" placeholder="" name="password" required value="">
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="jumlah_produk" class="form-label">Role User</label>
+                                        <input type="text" class="form-control" id="role" placeholder="" name="role" value="">
+                                    </div>
+                                    <button type="submit" class="btn primary-btn">Tambah User</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -84,22 +114,22 @@
                                     $count = 1;
                                     @endphp
                                     @if ($dataUmkm)
-                                        @foreach ($dataUmkm as $item)
-                                        <tr>
-                                            <th class="text-center">{{ $count++ }}</th>
-                                            <td class="text-center">{{ $item['nama_umkm'] }}</td>
-                                            <td class="text-center">{{ $item['kode_user'] }}</td>
-                                            <td class="text-center">{{ $item['alamat'] }}</td>
-                                            <td class="text-center">{{ $item['nomer_tlp'] }}</td>
-                                            <td class="text-center">
-                                                <a href="{{ route('umkm-hapus', ['id' => $item['kode_umkm']]) }}" class="delete-icon"><i class="fa fa-trash text-danger"></i></a>
-                                            </td>
-                                        </tr>
-                                        @endforeach
+                                    @foreach ($dataUmkm as $item)
+                                    <tr>
+                                        <th class="text-center">{{ $count++ }}</th>
+                                        <td class="text-center">{{ $item['nama_umkm'] }}</td>
+                                        <td class="text-center">{{ $item['kode_user'] }}</td>
+                                        <td class="text-center">{{ $item['alamat'] }}</td>
+                                        <td class="text-center">{{ $item['nomer_tlp'] }}</td>
+                                        <td class="text-center">
+                                            <a href="{{ route('umkm-hapus', ['id' => $item['kode_umkm']]) }}" class="delete-icon"><i class="fa fa-trash text-danger"></i></a>
+                                        </td>
+                                    </tr>
+                                    @endforeach
                                     @else
-                                        <tr>
-                                            <td colspan="6" class="text-center">Tidak ada UMKM</td>
-                                        </tr>
+                                    <tr>
+                                        <td colspan="6" class="text-center">Tidak ada UMKM</td>
+                                    </tr>
                                     @endif
                                 </tbody>
                             </table>

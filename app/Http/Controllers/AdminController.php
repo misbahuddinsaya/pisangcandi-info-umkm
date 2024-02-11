@@ -8,6 +8,7 @@ use Kreait\Firebase\Storage;
 use Kreait\Firebase\Factory;
 use Google\Cloud\Storage\StorageClient;
 use Kreait\Firebase\ServiceAccount;
+
 class AdminController extends Controller
 {
     protected $database;
@@ -54,8 +55,8 @@ class AdminController extends Controller
                 'name' => 'Umkm/' . $namaFoto
             ]
         );
-        
-        $fileUrl = $object->signedUrl(new \DateTime('+10 years')); 
+
+        $fileUrl = $object->signedUrl(new \DateTime('+10 years'));
         // dd($newKode);
         $newData = [
             $newKode => [
@@ -66,6 +67,36 @@ class AdminController extends Controller
                 'nomer_tlp' => $request->no_tlp,
                 'profile_umkm' => $fileUrl,
                 'kode_user' => 'USER1',
+            ]
+        ];
+
+        // Use push method to add a new product with a generated key
+        $reference->update($newData);
+        alert()->success('Berhasil', 'Data UMKM Berhasil di Tambahkan.');
+        return redirect('/profile-admin');
+    }
+    public function simpanUser(Request $request)
+    {
+        $reference = $this->database->getReference('tb_user');
+
+        // Get the latest kode_produk from tb_produk
+        $datakodeTerahir = $reference->orderByKey()->limitToLast(1)->getValue();
+
+        $lastKode = null;
+        if ($datakodeTerahir !== null) {
+            $lastEntry = end($datakodeTerahir);
+            $lastKode = $lastEntry['kode_user'];
+        }
+        $newKode = $this->generateNewCodeUser($lastKode);
+        // Handle file upload
+        // dd($newKode);
+        $newData = [
+            $newKode => [
+                'kode_user' => $newKode,
+                'nama' => $request->nama_user,
+                'username' => $request->username,
+                'password' => $request->password,
+                'role' => $request->role,
             ]
         ];
 
@@ -90,6 +121,22 @@ class AdminController extends Controller
 
         return $newKode;
     }
+    protected function generateNewCodeUser($lastKode)
+    {
+        // Jika tidak ada kode sebelumnya, mulai dengan K001
+        if (!$lastKode) {
+            return 'USER1';
+        }
+
+        // Ambil nomor dari kode terakhir, tambahkan 1, dan format ulang ke dalam K00X
+        $number = (int) substr($lastKode, 1); // Ambil angka dari kode terakhir
+        $newNumber = $number + 1; // Tambahkan 1 ke nomor terakhir
+        $paddedNumber = str_pad($newNumber, 1, '0', STR_PAD_LEFT); // Format ulang angka ke dalam tiga digit
+        $newKode = 'USER' . $paddedNumber;
+
+        return $newKode;
+    }
+
 
     public function hapusUmkm($id)
     {
