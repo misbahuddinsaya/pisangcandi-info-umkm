@@ -61,7 +61,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
-                                <form action="{{route('simpan-user')}}" method="POST" enctype="multipart/form-data">
+                                <form action="https://pisangcandi-umkminfo.vercel.app/simpan-user" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="mb-2">
                                         <label for="namaUmkm" class="form-label">Nama User</label>
