@@ -26,7 +26,7 @@ class ProdukKonsumen extends Controller
             return view('dashboard', ['dataProduk' => $data, 'totalProduk' => $totalProduk, 'dataUmkm' => $umkm]);
         } else {
             // Jika data kosong, kirimkan array kosong ke view
-            return view('dashboard', ['dataProduk' => [], 'totalProduk' => 0]);
+            return view('dashboard', ['dataProduk' => [], 'totalProduk' => 0, 'dataUmkm' => $umkm]);
         }
     }
 

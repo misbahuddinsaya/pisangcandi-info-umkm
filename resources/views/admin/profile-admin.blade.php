@@ -83,18 +83,24 @@
                                     @php
                                     $count = 1;
                                     @endphp
-                                    @foreach ($dataUmkm as $item)
-                                    <tr>
-                                        <th class="text-center">{{ $count++ }}</th>
-                                        <td class="text-center">{{ $item['nama_umkm'] }}</td>
-                                        <td class="text-center">{{ $item['kode_user'] }}</td>
-                                        <td class="text-center">{{ $item['alamat'] }}</td>
-                                        <td class="text-center">{{ $item['nomer_tlp'] }}</td>
-                                        <td class="text-center">
-                                            <a href="{{ route('umkm-hapus', ['id' => $item['kode_umkm']]) }}" class="delete-icon"><i class="fa fa-trash text-danger"></i></a>
-                                        </td>
-                                    </tr>
-                                    @endforeach
+                                    @if ($dataUmkm)
+                                        @foreach ($dataUmkm as $item)
+                                        <tr>
+                                            <th class="text-center">{{ $count++ }}</th>
+                                            <td class="text-center">{{ $item['nama_umkm'] }}</td>
+                                            <td class="text-center">{{ $item['kode_user'] }}</td>
+                                            <td class="text-center">{{ $item['alamat'] }}</td>
+                                            <td class="text-center">{{ $item['nomer_tlp'] }}</td>
+                                            <td class="text-center">
+                                                <a href="{{ route('umkm-hapus', ['id' => $item['kode_umkm']]) }}" class="delete-icon"><i class="fa fa-trash text-danger"></i></a>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    @else
+                                        <tr>
+                                            <td colspan="6" class="text-center">Tidak ada UMKM</td>
+                                        </tr>
+                                    @endif
                                 </tbody>
                             </table>
                         </div>

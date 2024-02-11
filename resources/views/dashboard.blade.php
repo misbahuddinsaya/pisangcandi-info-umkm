@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('title', 'Home')
 @section('content')
-<section class="breadcrumb-section-dash set-bg" data-setbg=" /img/breadcrumb-dashboard.jpg ">
+<section class="breadcrumb-section-dash set-bg" data-setbg=" /img/breadcrumb-dashboard.png ">
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-12 text-center">
@@ -24,8 +24,8 @@
     <div class="container">
         <div class="hero__item set-bg" data-setbg=" /img/hero/banner.jpg">
             <div class="hero__text">
-                <span>UMKM SAYA</span>
-                <h2>UMKM RW. 04 <br />PISANG COKLAT</h2>
+                <span>UMKM TES GIT</span>
+                <h2>UMKM RW. 04 <br />PISANG CANDI</h2>
                 <a href="#" class="primary-btn">TEMUKAN</a>
             </div>
         </div>

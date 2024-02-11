@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Services\FirebaseServices;
-
+use Kreait\Firebase\Storage;
+use Kreait\Firebase\Factory;
+use Google\Cloud\Storage\StorageClient;
+use Kreait\Firebase\ServiceAccount;
 class AdminController extends Controller
 {
     protected $database;
@@ -36,10 +39,23 @@ class AdminController extends Controller
         $newKode = $this->generateNewCode($lastKode);
         // Handle file upload
         $uploadedFile = $request->file('file');
-        $namaUmkmBaru = str_replace(' ', '', $request->namaUmkm);
+        $namaProdukBaru = str_replace(' ', '', $request->namaProduk);
+        $namaFoto = 'UMKM-' . $namaProdukBaru . '.' . $uploadedFile->getClientOriginalExtension();
 
-        $namaFoto = 'PPUMKM-' . $namaUmkmBaru . '.' . $uploadedFile->getClientOriginalExtension();
-        $uploadedFile->move(public_path('Produk/'), $namaFoto);
+        // Konfigurasi Firebase
+        $factory = (new Factory)->withServiceAccount(__DIR__ . '/firebase_credentials.json');
+
+        // Simpan file ke Firebase Storage
+        $storage = $factory->createStorage();
+        $bucket = $storage->getBucket('umkm-9256e.appspot.com');
+        $object = $bucket->upload(
+            fopen($uploadedFile->getRealPath(), 'r'),
+            [
+                'name' => 'Umkm/' . $namaFoto
+            ]
+        );
+        
+        $fileUrl = $object->signedUrl(new \DateTime('+10 years')); 
         // dd($newKode);
         $newData = [
             $newKode => [
@@ -48,7 +64,7 @@ class AdminController extends Controller
                 'jumlah_produk' => $request->jumlah_produk,
                 'alamat' => $request->alamat,
                 'nomer_tlp' => $request->no_tlp,
-                'profile_umkm' => $namaFoto,
+                'profile_umkm' => $fileUrl,
                 'kode_user' => 'USER1',
             ]
         ];
