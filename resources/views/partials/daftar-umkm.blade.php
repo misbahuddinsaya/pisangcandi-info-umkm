@@ -13,7 +13,7 @@
         @endforeach
         @else
         <div class="col-lg-12">
-            <p>Tidak ada UMKM yang tersedia saat ini.</p>
+            <p class="text-center">Tidak ada UMKM yang tersedia saat ini.</p>
         </div>
         @endif
     </div>
