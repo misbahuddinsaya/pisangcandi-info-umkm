@@ -77,7 +77,7 @@ class AdminController extends Controller
     }
     public function simpanUser(Request $request)
     {
-        $reference = $this->database->getReference('tb_user');
+        $reference = $this->database->getReference('tb_userumkm');
 
         // Get the latest kode_produk from tb_produk
         $datakodeTerahir = $reference->orderByKey()->limitToLast(1)->getValue();
