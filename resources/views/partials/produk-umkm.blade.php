@@ -1,3 +1,4 @@
+@if ($produkUmkm && count($produkUmkm) > 0)
 @foreach ($produkUmkm as $item)
 <div class="col-lg-3 col-md-6 col-sm-6">
     <div class="product__item">
@@ -12,3 +13,8 @@
     </div>
 </div>
 @endforeach
+@else
+<div class="col-12">
+    <p class="text-center">Tidak Ada Produk UMKM</p>
+</div>
+@endif
