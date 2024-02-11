@@ -131,7 +131,7 @@ class AdminController extends Controller
         // Ambil nomor dari kode terakhir, tambahkan 1, dan format ulang ke dalam K00X
         $number = (int) substr($lastKode, 1); // Ambil angka dari kode terakhir
         $newNumber = $number + 1; // Tambahkan 1 ke nomor terakhir
-        $paddedNumber = str_pad($newNumber, 1, '0', STR_PAD_LEFT); // Format ulang angka ke dalam tiga digit
+        $paddedNumber = str_pad($newNumber, 2, '0', STR_PAD_LEFT); // Format ulang angka ke dalam tiga digit
         $newKode = 'USER' . $paddedNumber;
 
         return $newKode;
