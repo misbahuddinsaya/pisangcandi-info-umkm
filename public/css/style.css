@@ -452,7 +452,7 @@ ol {
 	position: absolute;
 	left: 0;
 	top: 50px;
-	background: #ffffff;
+	background: #404040;
 	width: 180px;
 	z-index: 9;
 	padding: 5px 0;
@@ -476,7 +476,7 @@ ol {
 
 .header__menu ul li .header__menu__dropdown li a {
 	text-transform: capitalize;
-	color: #ffffff;
+	color: #404040;
 	font-weight: 400;
 	padding: 5px 15px;
 }
