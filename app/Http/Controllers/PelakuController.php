@@ -106,7 +106,7 @@ class PelakuController extends Controller
         $umkmData = Session::get('umkm_data');
 
         // Pastikan kode_umkm ada dalam data umkm
-        $kodeUmkm = $umkmData['kode_user'] ?? null;
+        $kodeUmkm = $umkmData['kode_umkm'] ?? null;
 
         // Dapatkan URL file yang diunggah
         $fileUrl = $object->signedUrl(new \DateTime('+10 years'));
