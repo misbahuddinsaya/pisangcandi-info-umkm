@@ -31,6 +31,13 @@ class PelakuController extends Controller
             return view('pelaku-umkm.daftar-umkm')->with('error', 'Daftar UMKM Terlebih Dahulu.');
         }
 
+        $umkmRef = $this->database->getReference('tb_umkm')->orderByChild('kode_user')->equalTo($kodeUmkm);
+        $umkmSnapshot = $umkmRef->getValue();
+
+        if (empty($umkmSnapshot)) {
+            // Jika tidak ditemukan, arahkan ke halaman daftar UMKM
+            return view('pelaku-umkm.daftar-umkm')->with('error', 'UMKM belum terdaftar.');
+        }
         // Ambil data produk berdasarkan kode_umkm dari tb_produk
         $referenceProduk = $this->database->getReference('tb_produk');
         $dataProduk = $referenceProduk->orderByChild('kode_umkm')->equalTo($kodeUmkm)->getValue();
