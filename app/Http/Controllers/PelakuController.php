@@ -28,7 +28,7 @@ class PelakuController extends Controller
 
         // Cek apakah kode_umkm ada sebelum melanjutkan
         if ($kodeUmkm === null) {
-            return view('/')->with('error', 'Daftar UMKM Terlebih Dahulu.');
+            return view('pelaku-umkm.daftar-umkm')->with('error', 'Daftar UMKM Terlebih Dahulu.');
         }
 
         // Ambil data produk berdasarkan kode_umkm dari tb_produk
