@@ -28,7 +28,7 @@ class PelakuController extends Controller
 
         // Cek apakah kode_umkm ada sebelum melanjutkan
         if ($kodeUmkm === null) {
-            return redirect('/')->with('error', 'Data UMKM tidak ditemukan.');
+            return view('pelaku-umkm.daftar-umkm')->with('error', 'Daftar UMKM Terlebih Dahulu.');
         }
 
         // Ambil data produk berdasarkan kode_umkm dari tb_produk
@@ -96,7 +96,7 @@ class PelakuController extends Controller
         $kodeUmkm = $umkmData['kode_umkm'] ?? null;
 
         // Dapatkan URL file yang diunggah
-        $fileUrl = $object->signedUrl(new \DateTime('+10 years')); 
+        $fileUrl = $object->signedUrl(new \DateTime('+10 years'));
         // dd($newKode);
         $newData = [
             $newKode => [
