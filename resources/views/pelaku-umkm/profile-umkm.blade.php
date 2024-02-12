@@ -20,45 +20,6 @@
 <section class="produk-add mt-5 mb-5">
     <div class="container-produk-add">
         <div class="row">
-            <div class="col-lg-12">
-                <div class="card">
-                    <div class="card-header primary-btn">Profile UMKM</div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <img src="" alt="Profile UMKM">
-                            </div>
-                            <div class="col">
-                                <form action="">
-                                    <div class="mb-2">
-                                        <label for="productName" class="form-label">Nama UMKM</label>
-                                        <input type="text" class="form-control" id="productName" placeholder="Nama Produk" required value="">
-                                    </div>
-                                    <div class="mb-2">
-                                        <label for="productAddress" class="form-label">Alamat</label>
-                                        <input type="text" class="form-control" id="productAddress" placeholder="Alamat" required value="">
-                                    </div>
-                                    <div class="mb-2">
-                                        <label for="phoneNumber" class="form-label">Nomor Telepon</label>
-                                        <input type="text" class="form-control" id="phoneNumber" placeholder="Nomor Telepon" required value="">
-                                    </div>
-                                    <div class="mb-2">
-                                        <label for="umkmProfile" class="form-label">Profile UMKM</label>
-                                        <input type="file" class="form-control" id="umkmProfile" placeholder="Profile UMKM" required>
-                                    </div>
-                                    <button type="submit" class="btn success-btn">Update Profile</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="produk-add mt-5 mb-5">
-    <div class="container-produk-add">
-        <div class="row">
             <div class="col-lg-6">
                 <div class="card">
                     <div class="card-body">
