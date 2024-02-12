@@ -69,6 +69,7 @@
                                         <li><a href="{{ route('admin-umkm')}}">Profil Admin</a></li>
                                         @elseif(session('user_level') == 'pelaku-umkm')
                                         <li><a href="{{ route('pelaku-umkm')}}">Profil UMKM</a></li>
+                                        <li><a href="{{ route('daftar-umkm') }}">Daftar UMKM</a></li>
                                         @endif
 
                                         <li><a href="{{ route('logout-user')}}">Logout</a></li>
