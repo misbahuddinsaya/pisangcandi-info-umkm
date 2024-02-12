@@ -26,11 +26,6 @@ class PelakuController extends Controller
         // Pastikan kode_umkm ada dalam data umkm
         $kodeUmkm = $umkmData['kode_umkm'] ?? null;
 
-        // Cek apakah kode_umkm ada sebelum melanjutkan
-        if ($kodeUmkm === null) {
-            return redirect('/')->with('error', 'Data UMKM tidak ditemukan.');
-        }
-
         // Ambil data produk berdasarkan kode_umkm dari tb_produk
         $referenceProduk = $this->database->getReference('tb_produk');
         $dataProduk = $referenceProduk->orderByChild('kode_umkm')->equalTo($kodeUmkm)->getValue();
