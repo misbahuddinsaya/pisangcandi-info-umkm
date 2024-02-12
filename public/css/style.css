@@ -2678,7 +2678,7 @@ ol {
 -----------------------*/
 
 .footer {
-	background: #F3F6FA;
+	background-image: url('../img/background-footer.png');
 	padding-top: 70px;
 	padding-bottom: 0;
 }
@@ -3043,12 +3043,12 @@ ol {
 	.humberger__open {
 		display: block;
 		font-size: 22px;
-		color: #ffffff;
+		color: #1c1c1c;
 		height: 35px;
 		width: 35px;
 		line-height: 33px;
 		text-align: center;
-		border: 1px solid #ffffff;
+		border: 1px solid #1c1c1c;
 		cursor: pointer;
 		position: absolute;
 		right: 15px;
