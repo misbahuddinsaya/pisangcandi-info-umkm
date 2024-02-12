@@ -2678,7 +2678,7 @@ ol {
 -----------------------*/
 
 .footer {
-	background-image: url('../img/background-footer.png');
+	background: #F3F6FA;
 	padding-top: 70px;
 	padding-bottom: 0;
 }

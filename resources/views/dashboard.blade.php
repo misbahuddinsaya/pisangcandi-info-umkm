@@ -3,11 +3,27 @@
 @section('content')
 <section class="hero">
     <div class="container">
-        <div class="hero__item set-bg" data-setbg=" /img/hero/banner.jpg">
-            <div class="hero__text">
-                <span>UMKM SAYA</span>
-                <h2>UMKM RW. 04 <br />PISANG CANDI</h2>
-                <a href="#" class="primary-btn">TEMUKAN</a>
+        <div id="carouselExample" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="carousel__item set-bg" data-setbg="/img/hero/banner1.jpg">
+                        <div class="hero__text">
+                            <span>UMKM SAYA</span>
+                            <h2>UMKM RW. 04 <br />PISANG CANDI</h2>
+                            <a href="#" class="primary-btn">TEMUKAN</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel__item set-bg" data-setbg="/img/hero/banner2.jpg">
+                        <div class="hero__text">
+                            <span>UMKM SAYA</span>
+                            <h2>UMKM RW. 04 <br />PISANG CANDI</h2>
+                            <a href="#" class="primary-btn">TEMUKAN</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tambahkan item carousel sesuai kebutuhan -->
             </div>
         </div>
     </div>
@@ -29,4 +45,12 @@
         </div>
     </div>
 </section>
+<script>
+    $(document).ready(function() {
+        // Menginisialisasi carousel
+        $('#carouselExample').carousel({
+            interval: 3000 // Waktu interval antara slide dalam milidetik
+        });
+    });
+</script>
 @endsection
