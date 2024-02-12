@@ -38,7 +38,7 @@ body {
 	font-smoothing: antialiased;
 	background-image: url('../img/background-web.png'); /* Ganti path/to/your/image.jpg dengan path ke gambar Anda */
     background-size: cover; /* Untuk memastikan gambar mengisi seluruh area body */
-    background-repeat: no-repeat; /* Agar gambar tidak diulang */
+ /* Agar gambar tidak diulang */
     background-position: center;
 }
 
@@ -749,7 +749,7 @@ ol {
 }
 
 .hero__item {
-	height: 431px;
+	height: 300px;
 	display: flex;
 	align-items: center;
 	padding-left: 75px;
