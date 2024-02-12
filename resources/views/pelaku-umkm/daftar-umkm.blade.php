@@ -26,7 +26,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
-                                <form action="{{route('simpan-umkm')}}"" method=" POST" enctype="multipart/form-data">
+                                <form action="{{route('simpan-umkm')}}" method=" POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="mb-2">
                                         <label for="namaUmkm" class="form-label">Nama UMKM</label>
@@ -62,7 +62,6 @@
     // Example starter JavaScript for disabling form submissions if there are invalid fields
     (function() {
         'use strict';
-
         var forms = document.querySelectorAll('.needs-validation');
 
         Array.prototype.slice.call(forms).forEach(function(form) {
