@@ -20,37 +20,51 @@ class PelakuController extends Controller
 
     public function index()
     {
-        // Ambil data umkm dari sesi login
-        $umkmData = Session::get('umkm_data');
+        // Ambil kode user dari sesi login
+        $kodeUser = Session::get('umkm_data')['kode_user'] ?? null;
 
-        // Pastikan kode_umkm ada dalam data umkm
-        $kodeUmkm = $umkmData['kode_umkm'] ?? null;
-
-        // Ambil data produk berdasarkan kode_umkm dari tb_produk
-        $referenceProduk = $this->database->getReference('tb_produk');
-        $dataProduk = $referenceProduk->orderByChild('kode_umkm')->equalTo($kodeUmkm)->getValue();
-
-        $referenceKategori = $this->database->getReference('tb_kategori');
-        $dataKategori = $referenceKategori->getValue();
-
-        // Mendapatkan nilai dari input form filter (jika ada)
-        $selectedKategori = request('kategori');
-
-        // Filter dataProduk berdasarkan kategori yang dipilih
-        if ($selectedKategori !== null && $selectedKategori != '0') {
-            $dataProduk = array_filter($dataProduk, function ($produk) use ($selectedKategori) {
-                return $produk['kategori'] == $selectedKategori;
-            });
+        // Cek apakah kode user ada sebelum melanjutkan
+        if ($kodeUser === null) {
+            return redirect('/')->with('error', 'Kode user tidak ditemukan.');
         }
 
-        $totalProduk = count($dataProduk);
+        // Ambil data umkm berdasarkan kode user dari tb_umkm
+        $umkmRef = $this->database->getReference('tb_umkm')->orderByChild('kode_user')->equalTo($kodeUser);
+        $umkmSnapshot = $umkmRef->getValue();
 
-        return view('pelaku-umkm.profile-umkm', [
-            'dataProduk' => $dataProduk,
-            'totalProduk' => $totalProduk,
-            'dataKategori' => $dataKategori,
-            'selectedKategori' => $selectedKategori,
-        ]);
+        // Cek apakah snapshot memiliki nilai atau tidak
+        if (!empty($umkmSnapshot)) {
+            // Ambil kode umkm dari hasil pencarian
+            $kodeUmkm = key($umkmSnapshot);
+
+            // Ambil data produk berdasarkan kode_umkm dari tb_produk
+            $referenceProduk = $this->database->getReference('tb_produk');
+            $dataProduk = $referenceProduk->orderByChild('kode_umkm')->equalTo($kodeUmkm)->getValue();
+
+            $referenceKategori = $this->database->getReference('tb_kategori');
+            $dataKategori = $referenceKategori->getValue();
+
+            // Mendapatkan nilai dari input form filter (jika ada)
+            $selectedKategori = request('kategori');
+
+            // Filter dataProduk berdasarkan kategori yang dipilih
+            if ($selectedKategori !== null && $selectedKategori != '0') {
+                $dataProduk = array_filter($dataProduk, function ($produk) use ($selectedKategori) {
+                    return $produk['kategori'] == $selectedKategori;
+                });
+            }
+
+            $totalProduk = count($dataProduk);
+
+            return view('pelaku-umkm.profile-umkm', [
+                'dataProduk' => $dataProduk,
+                'totalProduk' => $totalProduk,
+                'dataKategori' => $dataKategori,
+                'selectedKategori' => $selectedKategori,
+            ]);
+        } else {
+            return redirect('/')->with('error', 'Data UMKM tidak ditemukan.');
+        }
     }
 
 
