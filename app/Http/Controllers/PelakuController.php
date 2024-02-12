@@ -28,47 +28,35 @@ class PelakuController extends Controller
 
         // Cek apakah kode_umkm ada sebelum melanjutkan
         if ($kodeUmkm === null) {
-            return view('pelaku-umkm.daftar-umkm')->with('error', 'Daftar UMKM Terlebih Dahulu.');
+            return view('/')->with('error', 'Daftar UMKM Terlebih Dahulu.');
         }
 
-        $umkmRef = $this->database->getReference('tb_umkm')->orderByChild('kode_user')->equalTo($kodeUmkm);
-        $umkmSnapshot = $umkmRef->getValue();
-
-        // Cek apakah snapshot memiliki nilai atau tidak
-        if (!empty($umkmSnapshot)) {
-            // Pastikan seluruh data umkm disimpan dalam sesi
-            Session::put('umkm_data', $umkmData);
-
-            $referenceProduk = $this->database->getReference('tb_produk');
-            $dataProduk = $referenceProduk->orderByChild('kode_umkm')->equalTo($kodeUmkm)->getValue();
-
-            $referenceKategori = $this->database->getReference('tb_kategori');
-            $dataKategori = $referenceKategori->getValue();
-
-            // Mendapatkan nilai dari input form filter (jika ada)
-            $selectedKategori = request('kategori');
-
-            // Filter dataProduk berdasarkan kategori yang dipilih
-            if ($selectedKategori !== null && $selectedKategori != '0') {
-                $dataProduk = array_filter($dataProduk, function ($produk) use ($selectedKategori) {
-                    return $produk['kategori'] == $selectedKategori;
-                });
-            }
-
-            $totalProduk = count($dataProduk);
-
-            return view('pelaku-umkm.profile-umkm', [
-                'dataProduk' => $dataProduk,
-                'totalProduk' => $totalProduk,
-                'dataKategori' => $dataKategori,
-                'selectedKategori' => $selectedKategori,
-            ]);
-        } else {
-            return view('pelaku-umkm.daftar-umkm')->with('error', 'Daftar UMKM Terlebih Dahulu.');
-        }
         // Ambil data produk berdasarkan kode_umkm dari tb_produk
-    }
+        $referenceProduk = $this->database->getReference('tb_produk');
+        $dataProduk = $referenceProduk->orderByChild('kode_umkm')->equalTo($kodeUmkm)->getValue();
 
+        $referenceKategori = $this->database->getReference('tb_kategori');
+        $dataKategori = $referenceKategori->getValue();
+
+        // Mendapatkan nilai dari input form filter (jika ada)
+        $selectedKategori = request('kategori');
+
+        // Filter dataProduk berdasarkan kategori yang dipilih
+        if ($selectedKategori !== null && $selectedKategori != '0') {
+            $dataProduk = array_filter($dataProduk, function ($produk) use ($selectedKategori) {
+                return $produk['kategori'] == $selectedKategori;
+            });
+        }
+
+        $totalProduk = count($dataProduk);
+
+        return view('pelaku-umkm.profile-umkm', [
+            'dataProduk' => $dataProduk,
+            'totalProduk' => $totalProduk,
+            'dataKategori' => $dataKategori,
+            'selectedKategori' => $selectedKategori,
+        ]);
+    }
 
 
     public function simpan(Request $request)
@@ -233,7 +221,7 @@ class PelakuController extends Controller
                 'name' => 'Umkm/' . $namaFoto
             ]
         );
-        $kodeUser = session('kode_user');
+        $kodeUser = session('user_code');
         $fileUrl = $object->signedUrl(new \DateTime('+10 years'));
         // dd($newKode);
         $newData = [
@@ -251,7 +239,7 @@ class PelakuController extends Controller
         // Use push method to add a new product with a generated key
         $reference->update($newData);
         alert()->success('Berhasil', 'Data UMKM Berhasil di Tambahkan.');
-        return redirect('/profile-umkm');
+        return redirect('/');
     }
     protected function generateNewCodeUmkm($lastKode)
     {
@@ -267,5 +255,8 @@ class PelakuController extends Controller
         $newKode = 'U' . $paddedNumber;
 
         return $newKode;
+    }
+    public function daftarUmkm()
+    {
     }
 }
