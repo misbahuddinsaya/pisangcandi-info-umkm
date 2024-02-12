@@ -36,7 +36,7 @@ class PelakuController extends Controller
 
         // Cek apakah snapshot memiliki nilai atau tidak
         if (!empty($umkmSnapshot)) {
-            Session::put('umkm_user', $kodeUmkm);
+            Session::put('umkm_data', $kodeUmkm);
 
             $referenceProduk = $this->database->getReference('tb_produk');
             $dataProduk = $referenceProduk->orderByChild('kode_umkm')->equalTo($kodeUmkm)->getValue();
