@@ -32,7 +32,7 @@
                                 <form action="">
                                     <div class="mb-2">
                                         <label for="productName" class="form-label">Nama UMKM</label>
-                                        <input type="text" class="form-control" id="productName" placeholder="Nama Produk" required value="{{ session('umkm_data')['nama_umkm'] }}">
+                                        <input type="text" class="form-control" id="productName" placeholder="Nama Produk" required value="">
                                     </div>
                                     <div class="mb-2">
                                         <label for="productAddress" class="form-label">Alamat</label>
