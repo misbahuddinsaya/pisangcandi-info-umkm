@@ -19,13 +19,10 @@
                 <a href="#">Profile</a>
                 <ul class="header__menu__dropdown">
                     <li><a href="#">Nama Profil: {{ session('user')['nama'] }}</a></li>
-
                     @if(session('user_level') == 'admin')
                     <li><a href="{{ route('admin-umkm')}}">Profil Admin</a></li>
                     @elseif(session('user_level') == 'pelaku-umkm')
                     <li><a href="{{ route('pelaku-umkm')}}">Profil UMKM</a></li>
-                    @elseif(session('user_level') == 'pelaku-umkm')
-                    <li><a href="{{ route('daftar-umkm')}}">Daftar UMKM</a></li>
                     @elseif(session('user_level') == 'pelaku-umkm')
                     <li><a href="{{ route('daftar-umkm')}}">Daftar UMKM</a></li>
                     @endif
