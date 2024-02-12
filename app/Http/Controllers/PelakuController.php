@@ -36,7 +36,8 @@ class PelakuController extends Controller
 
         // Cek apakah snapshot memiliki nilai atau tidak
         if (!empty($umkmSnapshot)) {
-            Session::put('umkm_data', $kodeUmkm);
+            // Pastikan seluruh data umkm disimpan dalam sesi
+            Session::put('umkm_data', $umkmData);
 
             $referenceProduk = $this->database->getReference('tb_produk');
             $dataProduk = $referenceProduk->orderByChild('kode_umkm')->equalTo($kodeUmkm)->getValue();
@@ -66,8 +67,8 @@ class PelakuController extends Controller
             return view('pelaku-umkm.daftar-umkm')->with('error', 'Daftar UMKM Terlebih Dahulu.');
         }
         // Ambil data produk berdasarkan kode_umkm dari tb_produk
-
     }
+
 
 
     public function simpan(Request $request)
