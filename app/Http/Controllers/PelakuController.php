@@ -208,7 +208,8 @@ class PelakuController extends Controller
         // Handle file upload
         $uploadedFile = $request->file('file');
         $namaProdukBaru = str_replace(' ', '', $request->namaProduk);
-        $namaFoto = 'UMKM-' . $namaProdukBaru . '.' . $uploadedFile->getClientOriginalExtension();
+        $extension = $uploadedFile->getClientOriginalExtension();
+        $namaFoto = 'UMKM-' . $namaProdukBaru . '-' . time() . '.' . $extension;
 
         // Konfigurasi Firebase
         $factory = (new Factory)->withServiceAccount(__DIR__ . '/firebase_credentials.json');
@@ -222,9 +223,11 @@ class PelakuController extends Controller
                 'name' => 'Umkm/' . $namaFoto
             ]
         );
-        $kodeUser = session('user_code');
+
+        $umkmData = Session::get('umkm_data');
+        $kodeUser = $umkmData['kode_user'] ?? null;
+
         $fileUrl = $object->signedUrl(new \DateTime('+10 years'));
-        // dd($newKode);
         $newData = [
             $newKode => [
                 'kode_umkm' => $newKode,
