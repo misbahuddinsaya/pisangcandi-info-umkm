@@ -32,7 +32,7 @@
                                 <form action="">
                                     <div class="mb-2">
                                         <label for="productName" class="form-label">Nama UMKM</label>
-                                        <input type="text" class="form-control" id="productName" placeholder="Nama Produk" required value="{{ $dataProduk['nama_umkm'] }}">
+                                        <input type="text" class="form-control" id="productName" placeholder="Nama Produk" required value="{{ $dataUmkm['nama_umkm'] }}">
                                     </div>
                                     <div class="mb-2">
                                         <label for="productAddress" class="form-label">Alamat</label>

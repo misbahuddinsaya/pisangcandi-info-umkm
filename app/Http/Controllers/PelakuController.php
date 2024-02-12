@@ -39,7 +39,7 @@ class PelakuController extends Controller
 
             // Ambil data produk berdasarkan kode_umkm dari tb_produk
             $referenceProduk = $this->database->getReference('tb_produk');
-            $dataProduk = $referenceProduk->orderByChild('kode_umkm')->equalTo($kodeUmkm)->getValue();
+            $dataUmkm = $referenceProduk->orderByChild('kode_umkm')->equalTo($kodeUmkm)->getValue();
 
             $referenceKategori = $this->database->getReference('tb_kategori');
             $dataKategori = $referenceKategori->getValue();
@@ -47,17 +47,17 @@ class PelakuController extends Controller
             // Mendapatkan nilai dari input form filter (jika ada)
             $selectedKategori = request('kategori');
 
-            // Filter dataProduk berdasarkan kategori yang dipilih
+            // Filter dataUmkm berdasarkan kategori yang dipilih
             if ($selectedKategori !== null && $selectedKategori != '0') {
-                $dataProduk = array_filter($dataProduk, function ($produk) use ($selectedKategori) {
+                $dataUmkm = array_filter($dataUmkm, function ($produk) use ($selectedKategori) {
                     return $produk['kategori'] == $selectedKategori;
                 });
             }
 
-            $totalProduk = count($dataProduk);
+            $totalProduk = count($dataUmkm);
 
             return view('pelaku-umkm.profile-umkm', [
-                'dataProduk' => $dataProduk,
+                'dataUmkm' => $dataUmkm,
                 'totalProduk' => $totalProduk,
                 'dataKategori' => $dataKategori,
                 'selectedKategori' => $selectedKategori,
@@ -66,6 +66,7 @@ class PelakuController extends Controller
             return redirect('/')->with('error', 'Data UMKM tidak ditemukan.');
         }
     }
+
 
 
 
