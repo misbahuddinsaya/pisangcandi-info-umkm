@@ -1,4 +1,4 @@
-@if ($totalProduk && count($totalProduk) > 0)
+@if(isset($totalProduk) && $totalProduk > 0):
 @foreach ($dataProduk as $item)
 <div class="col-lg-3 col-md-6 col-sm-6">
     <div class="product__item">
