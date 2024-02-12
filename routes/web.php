@@ -30,7 +30,7 @@ Route::get('/profile-admin', [AdminController::class, 'index'])->name('admin-umk
 // Simpan Produk
 Route::post('/simpan-produk', [PelakuController::class, 'simpan'])->name('simpan-produk');
 Route::post('/daftar-umkm', [PelakuController::class, 'index'])->name('daftar-umkm');
-Route::post('/simpan-umkm', [PelakuController::class, 'simpanUmkm'])->name('simpan-umkm');
+Route::post('/simpan-umkm', [PelakuController::class, 'simpanUmkm'])->name('simpan');
 Route::post('/simpan-user', [AdminController::class, 'simpanUser'])->name('simpan-user');
 Route::get('/produk-UMKM/search', [ProdukKonsumen::class, 'search'])->name('produk-search');
 Route::get('/produk-UMKM/{id}', [PelakuController::class, 'deleteData'])->name('produk-hapus');

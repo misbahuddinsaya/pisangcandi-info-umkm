@@ -239,7 +239,7 @@ class PelakuController extends Controller
         // Use push method to add a new product with a generated key
         $reference->update($newData);
         alert()->success('Berhasil', 'Data UMKM Berhasil di Tambahkan.');
-        return redirect('/');
+        return redirect('/profile-umkm');
     }
     protected function generateNewCodeUmkm($lastKode)
     {
