@@ -29,7 +29,7 @@ Route::get('/profile-umkm', [PelakuController::class, 'index'])->name('pelaku-um
 Route::get('/profile-admin', [AdminController::class, 'index'])->name('admin-umkm');
 // Simpan Produk
 Route::post('/simpan-produk', [PelakuController::class, 'simpan'])->name('simpan-produk');
-Route::post('/daftar-umkm', [PelakuController::class, 'daftarUmkm'])->name('daftar-umkm');
+Route::get('/daftar-umkm', [PelakuController::class, 'daftarUmkm'])->name('daftar-umkm');
 Route::post('/simpan-umkm', [PelakuController::class, 'simpanUmkm'])->name('simpan');
 Route::post('/simpan-user', [AdminController::class, 'simpanUser'])->name('simpan-user');
 Route::get('/produk-UMKM/search', [ProdukKonsumen::class, 'search'])->name('produk-search');

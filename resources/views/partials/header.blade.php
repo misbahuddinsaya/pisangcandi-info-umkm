@@ -71,7 +71,6 @@
                                         <li><a href="{{ route('pelaku-umkm')}}">Profil UMKM</a></li>
                                         <li><a href="{{ route('daftar-umkm') }}">Daftar UMKM</a></li>
                                         @endif
-
                                         <li><a href="{{ route('logout-user')}}">Logout</a></li>
                                     </ul>
                                     @endif
