@@ -3043,12 +3043,12 @@ ol {
 	.humberger__open {
 		display: block;
 		font-size: 22px;
-		color: #1c1c1c;
+		color: #ffffff;
 		height: 35px;
 		width: 35px;
 		line-height: 33px;
 		text-align: center;
-		border: 1px solid #1c1c1c;
+		border: 1px solid #ffffff00;
 		cursor: pointer;
 		position: absolute;
 		right: 15px;
