@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <div class="breadcrumb__text">
-                    <h2>PROFIL UMKM</h2>
+                    <h2>DAFTAR UMKM</h2>
                     <div class="breadcrumb__option">
                         <a href="/">Home</a>
                         <span>Profile UMKM</span>
@@ -20,13 +20,13 @@
 <section class="produk-add mt-5 mb-5">
     <div class="container-produk-add">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-12">
                 <div class="card">
-                    <div class="card-header primary-btn">Tambah UMKM</div>
+                    <div class="card-header primary-btn">Daftar UMKM</div>
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
-                                <form action="" method="POST" enctype="multipart/form-data">
+                                <form action="{{route('simpan-umkm')}}"" method=" POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="mb-2">
                                         <label for="namaUmkm" class="form-label">Nama UMKM</label>

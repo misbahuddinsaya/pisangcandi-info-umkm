@@ -191,4 +191,69 @@ class PelakuController extends Controller
             'produkUmkm' => $produkData,
         ]);
     }
+    public function simpanUmkm(Request $request)
+    {
+        $reference = $this->database->getReference('tb_umkm');
+
+        // Get the latest kode_produk from tb_produk
+        $datakodeTerahir = $reference->orderByKey()->limitToLast(1)->getValue();
+
+        $lastKode = null;
+        if ($datakodeTerahir !== null) {
+            $lastEntry = end($datakodeTerahir);
+            $lastKode = $lastEntry['kode_umkm'];
+        }
+        $newKode = $this->generateNewCodeUmkm($lastKode);
+        // Handle file upload
+        $uploadedFile = $request->file('file');
+        $namaProdukBaru = str_replace(' ', '', $request->namaProduk);
+        $namaFoto = 'UMKM-' . $namaProdukBaru . '.' . $uploadedFile->getClientOriginalExtension();
+
+        // Konfigurasi Firebase
+        $factory = (new Factory)->withServiceAccount(__DIR__ . '/firebase_credentials.json');
+
+        // Simpan file ke Firebase Storage
+        $storage = $factory->createStorage();
+        $bucket = $storage->getBucket('umkm-9256e.appspot.com');
+        $object = $bucket->upload(
+            fopen($uploadedFile->getRealPath(), 'r'),
+            [
+                'name' => 'Umkm/' . $namaFoto
+            ]
+        );
+        $kodeUser = session('kode_user');
+        $fileUrl = $object->signedUrl(new \DateTime('+10 years'));
+        // dd($newKode);
+        $newData = [
+            $newKode => [
+                'kode_umkm' => $newKode,
+                'nama_umkm' => $request->namaUmkm,
+                'jumlah_produk' => $request->jumlah_produk,
+                'alamat' => $request->alamat,
+                'nomer_tlp' => $request->no_tlp,
+                'profile_umkm' => $fileUrl,
+                'kode_user' => $kodeUser,
+            ]
+        ];
+
+        // Use push method to add a new product with a generated key
+        $reference->update($newData);
+        alert()->success('Berhasil', 'Data UMKM Berhasil di Tambahkan.');
+        return redirect('/');
+    }
+    protected function generateNewCodeUmkm($lastKode)
+    {
+        // Jika tidak ada kode sebelumnya, mulai dengan K001
+        if (!$lastKode) {
+            return 'U001';
+        }
+
+        // Ambil nomor dari kode terakhir, tambahkan 1, dan format ulang ke dalam K00X
+        $number = (int) substr($lastKode, 1); // Ambil angka dari kode terakhir
+        $newNumber = $number + 1; // Tambahkan 1 ke nomor terakhir
+        $paddedNumber = str_pad($newNumber, 3, '0', STR_PAD_LEFT); // Format ulang angka ke dalam tiga digit
+        $newKode = 'U' . $paddedNumber;
+
+        return $newKode;
+    }
 }
