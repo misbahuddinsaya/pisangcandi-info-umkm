@@ -446,14 +446,13 @@ ol {
 	display: inline-block;
 	margin-right: 50px;
 	position: relative;
-	color: #999999;
 }
 
 .header__menu ul li .header__menu__dropdown {
 	position: absolute;
 	left: 0;
 	top: 50px;
-	background: #404040;
+	background: #222222;
 	width: 180px;
 	z-index: 9;
 	padding: 5px 0;
@@ -477,7 +476,7 @@ ol {
 
 .header__menu ul li .header__menu__dropdown li a {
 	text-transform: capitalize;
-	color: #404040;
+	color: #ffffff;
 	font-weight: 400;
 	padding: 5px 15px;
 }
