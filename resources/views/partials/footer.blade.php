@@ -17,6 +17,9 @@
                     </div>
                 </div>
             </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 offset-lg-1">
+
+            </div>
             <div class="col-lg-4 col-md-12">
                 <div class="footer__widget">
                     <h6>&copy; 2024 UMKM RW 04 Pisang Candi.</h6>

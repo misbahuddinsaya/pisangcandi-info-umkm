@@ -15,11 +15,10 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <div class="hero__itemset-bg" data-setbg="/img/hero/banner.jpg">
+                    <div class="hero__item set-bg" data-setbg="/img/hero/banner.jpg">
                         <div class="hero__text">
-                            <span>UMKM SAYA</span>
-                            <h2>UMKM RW. 04 <br />PISANG CANDI</h2>
-                            <a href="#" class="primary-btn">TEMUKAN</a>
+                            <span></span>
+                            <h2><br /></h2>
                         </div>
                     </div>
                 </div>
