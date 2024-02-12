@@ -467,7 +467,7 @@ ol {
 }
 
 .header__menu ul li .header__menu__dropdown li:hover>a {
-	color: #000000;
+	color: #7fad39;
 }
 
 .header__menu ul li .header__menu__dropdown li a {
@@ -478,7 +478,7 @@ ol {
 }
 
 .header__menu ul li.active a {
-	color: #000000;
+	color: #7fad39;
 }
 
 .header__menu ul li:hover .header__menu__dropdown {
@@ -488,7 +488,7 @@ ol {
 }
 
 .header__menu ul li:hover>a {
-	color: #000000;
+	color: #7fad39;
 }
 
 .header__menu ul li:last-child {

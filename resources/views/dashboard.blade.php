@@ -1,7 +1,6 @@
 @extends('layouts.master')
 @section('title', 'Home')
 @section('content')
-
 <section class="hero">
     <div class="container">
         <div class="hero__item set-bg" data-setbg=" /img/hero/banner.jpg">

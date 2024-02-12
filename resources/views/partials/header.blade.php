@@ -39,7 +39,7 @@
 
         </div>
     </div>
-    <div class="container" style="background-color: #7fad39;">
+    <div class="container">
         <div class="row">
             <div class="col-lg-3">
                 <div class="header__logo">
@@ -55,7 +55,7 @@
                     <div class="row">
                         <div class="col">
                             <ul>
-                                <li><a href="/">Home</a></li>
+                                <li><a href="/">Beranda</a></li>
                                 <li><a href="{{ route('produk') }}">Produk UMKM</a></li>
                                 <li>
                                     @if(session('user_level') == null)
