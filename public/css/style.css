@@ -434,6 +434,7 @@ ol {
 
 .header__menu {
 	padding: 24px 0;
+	background-color: #3CC032;
 	text-align: center;
 }
 
@@ -467,7 +468,7 @@ ol {
 }
 
 .header__menu ul li .header__menu__dropdown li:hover>a {
-	color: #7fad39;
+	color: #000000;
 }
 
 .header__menu ul li .header__menu__dropdown li a {
@@ -478,7 +479,7 @@ ol {
 }
 
 .header__menu ul li.active a {
-	color: #7fad39;
+	color: #000000;
 }
 
 .header__menu ul li:hover .header__menu__dropdown {
@@ -488,7 +489,7 @@ ol {
 }
 
 .header__menu ul li:hover>a {
-	color: #7fad39;
+	color: #000000;
 }
 
 .header__menu ul li:last-child {
