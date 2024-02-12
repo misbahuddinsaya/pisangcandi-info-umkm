@@ -28,41 +28,34 @@ class PelakuController extends Controller
 
         // Cek apakah kode_umkm ada sebelum melanjutkan
         if ($kodeUmkm === null) {
-            return view('pelaku-umkm.daftar-umkm')->with('error', 'Daftar UMKM Terlebih Dahulu.');
+            return redirect('/')->with('error', 'Data UMKM tidak ditemukan.');
         }
 
         // Ambil data produk berdasarkan kode_umkm dari tb_produk
         $referenceProduk = $this->database->getReference('tb_produk');
         $dataProduk = $referenceProduk->orderByChild('kode_umkm')->equalTo($kodeUmkm)->getValue();
 
-        // Periksa apakah $dataProduk tidak kosong sebelum melakukan foreach
-        if (!empty($dataProduk)) {
-            $referenceKategori = $this->database->getReference('tb_kategori');
-            $dataKategori = $referenceKategori->getValue();
+        $referenceKategori = $this->database->getReference('tb_kategori');
+        $dataKategori = $referenceKategori->getValue();
 
-            // Mendapatkan nilai dari input form filter (jika ada)
-            $selectedKategori = request('kategori');
+        // Mendapatkan nilai dari input form filter (jika ada)
+        $selectedKategori = request('kategori');
 
-            // Filter dataProduk berdasarkan kategori yang dipilih
-            if ($selectedKategori !== null && $selectedKategori != '0') {
-                $dataProduk = array_filter($dataProduk, function ($produk) use ($selectedKategori) {
-                    return $produk['kategori'] == $selectedKategori;
-                });
-            }
-
-            $totalProduk = count($dataProduk);
-
-            return view('pelaku-umkm.profile-umkm', [
-                'dataProduk' => $dataProduk,
-                'totalProduk' => $totalProduk,
-                'dataKategori' => $dataKategori,
-                'selectedKategori' => $selectedKategori,
-            ]);
-        } else {
-            // Tindakan jika $dataProduk kosong
-            // Misalnya, tampilkan pesan bahwa tidak ada produk yang ditemukan
-            return view('pelaku-umkm.profile-umkm')->with('error', 'Tidak ada produk yang ditemukan.');
+        // Filter dataProduk berdasarkan kategori yang dipilih
+        if ($selectedKategori !== null && $selectedKategori != '0') {
+            $dataProduk = array_filter($dataProduk, function ($produk) use ($selectedKategori) {
+                return $produk['kategori'] == $selectedKategori;
+            });
         }
+
+        $totalProduk = count($dataProduk);
+
+        return view('pelaku-umkm.profile-umkm', [
+            'dataProduk' => $dataProduk,
+            'totalProduk' => $totalProduk,
+            'dataKategori' => $dataKategori,
+            'selectedKategori' => $selectedKategori,
+        ]);
     }
 
 
