@@ -258,5 +258,6 @@ class PelakuController extends Controller
     }
     public function daftarUmkm()
     {
+        return view('pelaku-umkm.daftar-umkm');
     }
 }
