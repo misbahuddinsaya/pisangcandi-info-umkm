@@ -452,7 +452,7 @@ ol {
 	position: absolute;
 	left: 0;
 	top: 50px;
-	background: #222222;
+	background: #ffffff;
 	width: 180px;
 	z-index: 9;
 	padding: 5px 0;
@@ -753,6 +753,7 @@ ol {
 	display: flex;
 	align-items: center;
 	padding-left: 75px;
+	border-radius: 10px; 
 }
 
 .hero__text span {
