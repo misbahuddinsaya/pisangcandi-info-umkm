@@ -254,6 +254,9 @@ class PelakuController extends Controller
 
         // Use push method to add a new product with a generated key
         $reference->update($newData);
+
+        Session::put('umkm_data', ['kode_umkm' => $newKode]);
+
         alert()->success('Berhasil', 'Data UMKM Berhasil di Tambahkan.');
         return redirect('/');
     }
