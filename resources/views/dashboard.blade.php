@@ -2,6 +2,9 @@
 @section('title', 'Home')
 @section('content')
 <section class="hero">
+    <div class="section-title">
+        <h2>Produk Terbaru</h2>
+    </div>
     <div class="container">
         <div id="carouselExample" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
