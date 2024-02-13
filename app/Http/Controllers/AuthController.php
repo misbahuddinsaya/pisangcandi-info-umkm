@@ -24,7 +24,7 @@ class AuthController extends Controller
         $username = $request->input('username');
         $password = $request->input('password');
 
-        $referenceUser = $this->database->getReference('tb_user');
+        $referenceUser = $this->database->getReference('tb_userumkm');
         $dataUser = $referenceUser->getValue();
 
         if ($dataUser === null || empty($dataUser)) {
