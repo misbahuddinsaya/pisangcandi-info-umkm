@@ -54,23 +54,16 @@ class AuthController extends Controller
             // dd($kodeUser);
             // Ambil data dari tb_umkm dengan mencocokkan kode_user
             $dataUmkm = null;
-
-            $umkmData = $this->database->getReference('tb_umkm')->getValue();
-            if ($umkmData !== null) {
-                // Lakukan iterasi jika data ditemukan
-                foreach ($umkmData as $umkm) {
-                    if ($umkm['kode_user'] === $kodeUser) {
-                        $dataUmkm = $umkm;
-                        break;
-                    }
+            foreach ($this->database->getReference('tb_umkm')->getValue() as $umkmData) {
+                if ($umkmData['kode_user'] === $kodeUser) {
+                    $dataUmkm = $umkmData;
+                    break;
                 }
             }
 
             if ($dataUmkm !== null) {
                 // Data tb_umkm ditemukan, simpan ke dalam sesi atau lakukan sesuai kebutuhan
                 Session::put('umkm_data', $dataUmkm);
-
-                return redirect('/')->with('success', 'Login berhasil');
             }
 
             // Redirect ke dashboard atau lakukan hal lain setelah login berhasil
