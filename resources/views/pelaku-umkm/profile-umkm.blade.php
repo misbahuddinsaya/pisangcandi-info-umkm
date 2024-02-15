@@ -10,7 +10,7 @@
                     <h2>PROFIL UMKM</h2>
                     <div class="breadcrumb__option">
                         <a href="/">Home</a>
-                        <span>Profile UMKM</span>
+                        <span>Profile UMKM {{ session('umkm_data')['nama_umkm'] }}</span>
                     </div>
                 </div>
             </div>
