@@ -786,8 +786,8 @@ ol {
 -----------------------*/
 
 .categories__item {
-	height: 270px;
-	border-radius: 15px;
+	height: 220px;
+	border-radius: 10px;
 	overflow: hidden;
 	position: relative;
 	margin-top: 50px;
