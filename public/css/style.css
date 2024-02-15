@@ -786,7 +786,7 @@ ol {
 -----------------------*/
 
 .categories__item {
-	height: 270px;
+	height: 180px;
 	border-radius: 15px;
 	overflow: hidden;
 	position: relative;
@@ -1573,8 +1573,7 @@ ol {
 }
 
 .product__item {
-	margin-top: 100px;
-	margin-bottom: 100px;
+	margin-bottom: 50px;
 }
 
 .product__item:hover .product__item__pic .product__item__pic__hover {
