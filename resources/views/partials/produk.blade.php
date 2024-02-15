@@ -1,6 +1,6 @@
 @if(isset($totalProduk) && $totalProduk > 0):
 @foreach ($dataProduk as $item)
-<div class="col-lg-3 col-md-6 col-sm-6">
+<div class="col-lg-3 col-md-2 col-sm-2">
     <div class="product__item">
         <div class="product__item__pic set-bg" data-setbg="<?= $item['foto_produk']; ?>">
             <ul class="product__item__pic__hover">
