@@ -42,6 +42,8 @@
                             </div>
                             <div class="col-md-12 mb-2">
                                 <label for="kategori_produk" class="form-label">Kategori Produk</label>
+                            </div>
+                            <div class="col-md-12 mb-2">
                                 <select class="form-select" id="kategori_produk" name="kategori_produk" aria-label="Large select example" required>
                                     <option selected disabled>-- Pilih Kategori --</option>
                                     @foreach ($dataKategori as $item)
