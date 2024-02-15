@@ -786,15 +786,11 @@ ol {
 -----------------------*/
 
 .categories__item {
-    height: 150px; /* Ubah tinggi sesuai kebutuhan */
-    width: 220px; /* Ubah lebar sesuai kebutuhan */
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-    margin-top: 20px; /* Ubah margin atas sesuai kebutuhan */
-    margin-right: 20px; /* Ubah margin kanan sesuai kebutuhan */
-    margin-bottom: 20px; /* Ubah margin bawah sesuai kebutuhan */
-    margin-left: 20px; /* Ubah margin kiri sesuai kebutuhan */
+	height: 270px;
+	border-radius: 10px;
+	overflow: hidden;
+	position: relative;
+	margin-top: 50px;
 }
 
 .categories__item h5 {
