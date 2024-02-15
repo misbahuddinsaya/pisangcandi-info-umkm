@@ -40,7 +40,7 @@
                                     Please choose a username.
                                 </div>
                             </div>
-                            <div class="col-md-6 mb-2">
+                            <div class="col-md-12 mb-2">
                                 <label for="kategori_produk" class="form-label">Kategori Produk</label>
                                 <select class="form-select" id="kategori_produk" name="kategori_produk" aria-label="Large select example" required>
                                     <option selected disabled>-- Pilih Kategori --</option>
