@@ -22,8 +22,11 @@
                     @if(session('user_level') == 'admin')
                     <li><a href="{{ route('admin-umkm')}}">Profil Admin</a></li>
                     @elseif(session('user_level') == 'pelaku-umkm')
-                    <li><a href="{{ route('pelaku-umkm')}}">Profil UMKM</a></li>
-                    <li><a href="{{ route('daftar-umkm') }}">Daftar UMKM</a></li>
+                        @if (session('umkm_data') != null)
+                            <li><a href="{{ route('pelaku-umkm')}}">Profil UMKM</a></li> 
+                        @else 
+                            <li><a href="{{ route('daftar-umkm') }}">Daftar UMKM</a></li>
+                        @endif
                     @endif
                     <li><a href="{{ route('logout-user')}}">Logout</a></li>
                 </ul>
@@ -67,8 +70,11 @@
                                         @if(session('user_level') == 'admin')
                                         <li><a href="{{ route('admin-umkm')}}">Profil Admin</a></li>
                                         @elseif(session('user_level') == 'pelaku-umkm')
-                                        <li><a href="{{ route('pelaku-umkm')}}">Profil UMKM</a></li>
-                                        <li><a href="{{ route('daftar-umkm') }}">Daftar UMKM</a></li>
+                                            @if (session('umkm_data') != null)
+                                                <li><a href="{{ route('pelaku-umkm')}}">Profil UMKM</a></li> 
+                                            @else 
+                                                <li><a href="{{ route('daftar-umkm') }}">Daftar UMKM</a></li>
+                                            @endif
                                         @endif
                                         <li><a href="{{ route('logout-user')}}">Logout</a></li>
                                     </ul>
