@@ -1581,6 +1581,15 @@ ol {
 
 .product__item {
 	margin-bottom: 50px;
+	background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.product__item:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .product__item:hover .product__item__pic .product__item__pic__hover {
@@ -1592,6 +1601,7 @@ ol {
     height: 225px;
 	position: relative;
 	overflow: hidden;
+	border-radius: 8px 8px 0 0;
 }
 
 .product__item__pic__hover {
@@ -1605,6 +1615,12 @@ ol {
 	-ms-transition: all, 0.5s;
 	-o-transition: all, 0.5s;
 	transition: all, 0.5s;
+}
+
+.product__item__pic__img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .product__item__pic__hover li {
