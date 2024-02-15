@@ -8,9 +8,10 @@
             <div class="col-lg-12 text-center">
                 <div class="breadcrumb__text">
                     <h2>PROFIL UMKM</h2>
+                    <h3>{{ session('umkm_data')['nama_umkm'] }}</h3>
                     <div class="breadcrumb__option">
                         <a href="/">Home</a>
-                        <span>Profile UMKM {{ session('umkm_data')['nama_umkm'] }}</span>
+                        <span>Profile UMKM </span>
                     </div>
                 </div>
             </div>
@@ -74,7 +75,6 @@
                             </div>
                             <div class="col-md-12 ">
                                 <button type="submit" class="btn primary-btn ms-3 submit-tambah">Tambah Produk</button>
-                                <button type="button" class="btn success-btn ms-3">Update Produk</button>
                             </div>
                         </form>
                     </div>
@@ -82,7 +82,7 @@
             </div>
 
             <!-- Right Column - Product Table -->
-            <div class="col-lg-6">
+            <div class="col-lg-6 mt-5">
                 <div class="card">
                     <h5 class="card-header primary-btn">Produk UMKM</h5>
                     <div class="card-body">
