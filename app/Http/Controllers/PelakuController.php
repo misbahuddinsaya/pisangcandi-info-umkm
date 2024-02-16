@@ -121,6 +121,8 @@ class PelakuController extends Controller
                 'keterangan' => $request->keterangan_produk,
                 'foto_produk' => $fileUrl,
                 'kode_umkm' => $kodeUmkm,
+                'instagram' => $request->instagram,
+                'no_whatsapp' => $request->no_whatsapp,
             ]
         ];
 
