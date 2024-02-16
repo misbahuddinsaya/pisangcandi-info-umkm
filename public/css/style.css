@@ -1688,7 +1688,8 @@ ol {
     color: black; /* Mengatur warna teks menjadi hitam */
     font-size: 16px;
 	font-weight: 700; /* Mengatur ukuran font */
-    text-decoration: none; /* Menghilangkan dekorasi tautan */
+    text-decoration: none;
+	margin-bottom: 20px; /* Menghilangkan dekorasi tautan */
 }
 
 .product__item__text h5 {
