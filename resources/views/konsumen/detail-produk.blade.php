@@ -40,12 +40,10 @@
                     <p>Kategori Produk : <b>{{ $nama_kategori }}</b></p>
                     <ul>
                         <li>
-                            <b>Share on</b>
+                            <b>Bagikan Di</b>
                             <div class="share">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                                <a href="#"><i class="fa fa-whatsapp"></i></a>
+                                <a href="instagram://user?username={{$produk['instagram']}}""><i class=" fa fa-instagram"></i></a>
+                                <a href="https://wa.me/{{$produk['no_whatsapp']}}"><i class="fa fa-whatsapp"></i></a>
                             </div>
                         </li>
                     </ul>
@@ -55,13 +53,13 @@
                 <div class="product__details__tab">
                     <ul class="nav nav-tabs" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab" aria-selected="true">Deskripsi</a>
+
                         </li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="tabs-1" role="tabpanel">
                             <div class="product__details__tab__desc">
-                                <h6>Products Infomation</h6>
+                                <h6>Tentang Produk</h6>
                                 <p>{{$produk['deskripsi']}}</p>
                             </div>
                         </div>
