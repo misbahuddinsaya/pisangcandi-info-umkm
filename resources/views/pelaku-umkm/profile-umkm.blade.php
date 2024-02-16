@@ -69,6 +69,20 @@
                                 </div>
                             </div>
                             <div class="col-md-12 mb-2">
+                                <label for="instagram">Instagram</label>
+                                <textarea class="form-control" id="instagram" name="instagram" rows="3" required></textarea>
+                                <div class="invalid-feedback">
+                                    Please choose a username.
+                                </div>
+                            </div>
+                            <div class="col-md-12 mb-2">
+                                <label for="no_whatsapp">Nomer Whatsapp</label>
+                                <textarea class="form-control" id="no_whatsapp" name="no_whatsapp" rows="3" required></textarea>
+                                <div class="invalid-feedback">
+                                    Please choose a username.
+                                </div>
+                            </div>
+                            <div class="col-md-12 mb-2">
                                 <label for="formFile" class="form-label">Pilih File</label>
                                 <input class="form-control" type="file" id="formFile" name="file" required>
                                 <div class="invalid-feedback">
