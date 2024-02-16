@@ -3,7 +3,7 @@
 <div class="col-lg-3 col-md-6 col-sm-6">
     <div class="product__item">
         <a href="{{ route('produk-info', ['id' => $item['kode_produk']]) }}">
-            <div class="product__item__pic set-bg" data-setbg="">
+            <div class="product__item__pic set-bg" data-setbg="<?= $item['foto_produk']; ?>">
                 <ul class="product__item__pic__hover">
                     <li><a href="{{ route('produk-info', ['id' => $item['kode_produk']]) }}"><i class="fa fa-info"></i></a></li>
                 </ul>
