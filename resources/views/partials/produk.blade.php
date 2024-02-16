@@ -1,6 +1,6 @@
 @if(isset($totalProduk) && $totalProduk > 0):
 @foreach ($dataProduk as $item)
-<div class="col">
+<div class="col-6">
     <div class="product__item">
         <a href="{{ route('produk-info', ['id' => $item['kode_produk']]) }}">
             <div class="product__item__pic set-bg" data-setbg="">
