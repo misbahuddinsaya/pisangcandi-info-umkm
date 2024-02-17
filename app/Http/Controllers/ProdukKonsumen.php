@@ -18,7 +18,7 @@ class ProdukKonsumen extends Controller
         $reference = $this->database->getReference('tb_umkm');
         $umkm = $reference->getValue();
 
-        $reference = $this->database->getReference('tb_produk');
+        $reference = $this->database->getReference('tb_daftarumkm');
         $data = $reference->getValue();
 
         if ($data !== null) {
@@ -30,24 +30,9 @@ class ProdukKonsumen extends Controller
         }
     }
 
-    // public function index() {
-    //     $reference = $this->database->getReference('tb_produk');
-    //     $data = $reference->getValue();
-    //     $referenceKategori = $this->database->getReference('tb_kategori');
-    //     $dataKategori = $referenceKategori->getValue();
-
-    //     if ($data !== null) {
-    //         $totalProduk = count($data);
-    //         return view('konsumen.produk-konsumen', ['dataProduk' => $data, 'totalProduk' => $totalProduk, 'dataKategori' => $dataKategori]);
-    //     } else {
-    //         // Jika data kosong, kirimkan array kosong ke view
-    //         return view('konsumen.produk-konsumen', ['dataProduk' => [], 'totalProduk' => 0, 'dataKategori' => []]);
-    //     }
-    // }
-
     public function index()
     {
-        $referenceProduk = $this->database->getReference('tb_produk');
+        $referenceProduk = $this->database->getReference('tb_daftarumkm');
         $dataProduk = $referenceProduk->getValue();
 
         $referenceKategori = $this->database->getReference('tb_kategori');
@@ -81,7 +66,7 @@ class ProdukKonsumen extends Controller
     public function detail($id)
     {
         // Ambil data produk berdasarkan ID atau suatu identifier unik lainnya
-        $referenceProduk = $this->database->getReference('tb_produk/' . $id);
+        $referenceProduk = $this->database->getReference('tb_daftarumkm/' . $id);
         $produk = $referenceProduk->getValue();
 
         if ($produk !== null) {
@@ -106,7 +91,7 @@ class ProdukKonsumen extends Controller
         $searchTerm = $request->input('search');
 
         // Get all products for searching
-        $referenceProduk = $this->database->getReference('tb_produk');
+        $referenceProduk = $this->database->getReference('tb_daftarumkm');
         $dataProduk = $referenceProduk->getValue();
 
         // Filter products based on the search term
