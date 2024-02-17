@@ -21,8 +21,10 @@ class AdminController extends Controller
         $reference = $this->database->getReference('tb_umkm');
         $data = $reference->getValue();
 
+        $referenceKategori = $this->database->getReference('tb_kategori');
+        $dataKategori = $referenceKategori->getValue();
 
-        return view('admin.profile-admin', ['dataUmkm' => $data]);
+        return view('admin.profile-admin', ['dataUmkm' => $data, 'dataKategori' => $dataKategori,]);
     }
 
 
