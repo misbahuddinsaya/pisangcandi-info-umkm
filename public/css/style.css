@@ -786,12 +786,8 @@ ol {
 -----------------------*/
 
 .categories__item {
-	height: 242px;
-	width: 273px;
-	border-radius: 10px;
-	overflow: hidden;
+	height: 270px;
 	position: relative;
-	margin-top: 50px;
 }
 
 .categories__item h5 {
