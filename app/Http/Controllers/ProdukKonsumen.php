@@ -18,7 +18,7 @@ class ProdukKonsumen extends Controller
         $reference = $this->database->getReference('tb_umkm');
         $umkm = $reference->getValue();
 
-        $reference = $this->database->getReference('tb_daftarumkm');
+        $reference = $this->database->getReference('tb_daftarproduk');
         $data = $reference->getValue();
 
         if ($data !== null) {
@@ -32,7 +32,7 @@ class ProdukKonsumen extends Controller
 
     public function index()
     {
-        $referenceProduk = $this->database->getReference('tb_daftarumkm');
+        $referenceProduk = $this->database->getReference('tb_daftarproduk');
         $dataProduk = $referenceProduk->getValue();
 
         $referenceKategori = $this->database->getReference('tb_kategori');
@@ -66,7 +66,7 @@ class ProdukKonsumen extends Controller
     public function detail($id)
     {
         // Ambil data produk berdasarkan ID atau suatu identifier unik lainnya
-        $referenceProduk = $this->database->getReference('tb_daftarumkm/' . $id);
+        $referenceProduk = $this->database->getReference('tb_daftarproduk/' . $id);
         $produk = $referenceProduk->getValue();
 
         if ($produk !== null) {
@@ -91,7 +91,7 @@ class ProdukKonsumen extends Controller
         $searchTerm = $request->input('search');
 
         // Get all products for searching
-        $referenceProduk = $this->database->getReference('tb_daftarumkm');
+        $referenceProduk = $this->database->getReference('tb_daftarproduk');
         $dataProduk = $referenceProduk->getValue();
 
         // Filter products based on the search term
