@@ -34,9 +34,9 @@ class AuthController extends Controller
 
                 // Redirect sesuai dengan peran pengguna
                 if ($userData['role'] === 'admin') {
-                    return redirect()->route('dashboard')->with('success', 'Login berhasil');
+                    return redirect('/')->with('success', 'Login berhasil');
                 } elseif ($userData['role'] === 'pelaku-umkm') {
-                    return redirect()->route('dashboard')->with('success', 'Login berhasil');
+                    return redirect('/')->with('success', 'Login berhasil');
                 }
             }
         }
