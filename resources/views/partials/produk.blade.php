@@ -1,8 +1,10 @@
 @if(isset($totalProduk) && $totalProduk > 0):
 @foreach ($dataProduk as $item)
-<div class="col-lg-4 col-md-6 col-sm-3 col-12">
-    <div class="categories__item set-bg" data-setbg="<?= $item['foto_produk']; ?>">
-        <h5><a href="{{ route('produk-info', ['id' => $item['kode_produk']]) }}">{{ $item['nama_produk'] }}</a></h5>
+<div class="categories__slider owl-carousel">
+    <div class="col-lg-3">
+        <div class="categories__item set-bg" data-setbg="<?= $item['foto_produk']; ?>">
+            <h5><a href="{{ route('produk-info', ['id' => $item['kode_produk']]) }}">{{ $item['nama_produk'] }}</a></h5>
+        </div>
     </div>
 </div>
 @endforeach
