@@ -155,14 +155,14 @@ class AdminController extends Controller
     {
         // Jika tidak ada kode sebelumnya, mulai dengan K001
         if (!$lastKode) {
-            return 'DP0001';
+            return 'U001';
         }
 
         // Ambil nomor dari kode terakhir, tambahkan 1, dan format ulang ke dalam K00X
         $number = (int) substr($lastKode, 1); // Ambil angka dari kode terakhir
         $newNumber = $number + 1; // Tambahkan 1 ke nomor terakhir
-        $paddedNumber = str_pad($newNumber, 4, '0', STR_PAD_LEFT); // Format ulang angka ke dalam tiga digit
-        $newKode = 'DP' . $paddedNumber;
+        $paddedNumber = str_pad($newNumber, 3, '0', STR_PAD_LEFT); // Format ulang angka ke dalam tiga digit
+        $newKode = 'U' . $paddedNumber;
 
         return $newKode;
     }
