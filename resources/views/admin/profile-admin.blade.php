@@ -148,7 +148,7 @@
                                     @foreach ($dataUmkm as $item)
                                     <tr>
                                         <th class="text-center">{{ $count++ }}</th>
-                                        <td class="text-center">{{ $item['nama_umkm'] }}</td>
+                                        <td class="text-center">{{ $item['nama_produk'] }}</td>
                                         <td class="text-center">{{ $item['nama_pemilik'] }}</td>
                                         <td class="text-center">{{ $item['alamat'] }}</td>
                                         <td class="text-center">{{ $item['nomer_tlp'] }}</td>
