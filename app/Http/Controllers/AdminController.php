@@ -155,7 +155,7 @@ class AdminController extends Controller
     {
         // Jika tidak ada kode sebelumnya, mulai dengan K001
         if (!$lastKode) {
-            return 'DP001';
+            return 'DP0001';
         }
 
         // Ambil nomor dari kode terakhir, tambahkan 1, dan format ulang ke dalam K00X
