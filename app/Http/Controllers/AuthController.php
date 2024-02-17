@@ -58,7 +58,7 @@ class AuthController extends Controller
             // Ambil data dari tb_umkm dengan mencocokkan kode_user
             $dataUmkm = null;
             foreach ($this->database->getReference('tb_umkm')->getValue() as $umkmData) {
-                if (isset($umkmData['kode_user']) && $umkmData['kode_user'] === $kodeUser) {
+                if ($umkmData['kode_user'] === $kodeUser) {
                     $dataUmkm = $umkmData;
                     break;
                 }
