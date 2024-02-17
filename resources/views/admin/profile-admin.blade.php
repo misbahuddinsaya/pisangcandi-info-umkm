@@ -20,49 +20,78 @@
 <section class="produk-add mt-5 mb-5">
     <div class="container-produk-add">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-6">
                 <div class="card">
-                    <div class="card-header primary-btn">Tambah UMKM</div>
                     <div class="card-body">
-                        <div class="row">
-                            <div class="col">
-                                <form action="https://pisangcandi-umkminfo.vercel.app/simpan-user" method="POST" enctype="multipart/form-data">
-                                    @csrf
-                                    <div class="mb-2">
-                                        <label for="namaUmkm" class="form-label">Nama UMKM</label>
-                                        <input type="text" class="form-control" id="nama_user" placeholder="" name="nama_user" value="">
-                                    </div>
-                                    <div class="mb-2">
-                                        <label for="alamat" class="form-label">Pemilik</label>
-                                        <input type="text" class="form-control" id="username" placeholder="" name="username" value="">
-                                    </div>
-                                    <div class="mb-2">
-                                        <label for="no_tlp" class="form-label">Nomer Telepon</label>
-                                        <input type="password" class="form-control" id="password" placeholder="" name="password" required value="">
-                                    </div>
-                                    <div class="mb-2">
-                                        <label for="no_tlp" class="form-label">Alamat</label>
-                                        <input type="password" class="form-control" id="password" placeholder="" name="password" required value="">
-                                    </div>
-                                    <div class="col-md-12 mb-2">
-                                        <select class="form-select" id="kategori_produk" name="kategori_produk" aria-label="Large select example" required>
-                                            <option selected disabled>-- Pilih Kategori --</option>
-                                            @foreach ($dataKategori as $item)
-                                            <option value="{{$item['kode']}}">{{$item['nama_kategori']}}</option>
-                                            @endforeach
-                                        </select>
-                                        <div class="invalid-feedback">
-                                            Please choose a username.
-                                        </div>
-                                    </div>
-                                    <div class="mb-2">
-                                        <label for="jumlah_produk" class="form-label">Role User</label>
-                                        <input type="text" class="form-control" id="role" placeholder="" name="role" value="">
-                                    </div>
-                                    <button type="submit" class="btn primary-btn">Tambah User</button>
-                                </form>
+                        <form class="row g-3 needs-validation" novalidate action="https://pisangcandi-umkminfo.vercel.app/simpan-produk" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <div class="col-md-12 mb-2">
+                                <label for="nama_produk">Nama Produk</label>
+                                <input type="text" class="form-control" id="nama_produk" name="namaProduk" required value="">
+                                <div class="invalid-feedback">
+                                    Please choose a username.
+                                </div>
                             </div>
-                        </div>
+                            <div class="col-md-12 mb-2">
+                                <label for="keterangan_produk">Keterangan Produk</label>
+                                <input type="text" class="form-control" id="keterangan_produk" name="keterangan_produk" required>
+                                <div class="invalid-feedback">
+                                    Please choose a username.
+                                </div>
+                            </div>
+                            <div class="col-md-12 mb-2">
+                                <label for="kategori_produk" class="form-label">Kategori Produk</label>
+                            </div>
+                            <div class="col-md-12 mb-2">
+                                <select class="form-select" id="kategori_produk" name="kategori_produk" aria-label="Large select example" required>
+                                    <option selected disabled>-- Pilih Kategori --</option>
+                                    @foreach ($dataKategori as $item)
+                                    <option value="{{$item['kode']}}">{{$item['nama_kategori']}}</option>
+                                    @endforeach
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please choose a username.
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <label for="harga_produk">Harga Produk</label>
+                                <input type="number" class="form-control" id="harga_produk" name="harga_produk" required>
+                                <div class="invalid-feedback">
+                                    Please choose a username.
+                                </div>
+                            </div>
+                            <div class="col-md-12 mb-2">
+                                <label for="deskripsi">Deskripsi</label>
+                                <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3" required></textarea>
+                                <div class="invalid-feedback">
+                                    Please choose a username.
+                                </div>
+                            </div>
+                            <div class="col-md-12 mb-2">
+                                <label for="instagram">Instagram</label>
+                                <input type="text" class="form-control" id="instagram" name="instagram" required>
+                                <div class="invalid-feedback">
+                                    Please choose a username.
+                                </div>
+                            </div>
+                            <div class="col-md-12 mb-2">
+                                <label for="no_whatsapp">Nomer Whatsapp</label>
+                                <input type="number" class="form-control" id="no_whatsapp" name="no_whatsapp" required>
+                                <div class="invalid-feedback">
+                                    Please choose a username.
+                                </div>
+                            </div>
+                            <div class="col-md-12 mb-2">
+                                <label for="formFile" class="form-label">Pilih File</label>
+                                <input class="form-control" type="file" id="formFile" name="file" required>
+                                <div class="invalid-feedback">
+                                    Please choose a username.
+                                </div>
+                            </div>
+                            <div class="col-md-12 ">
+                                <button type="submit" class="btn primary-btn ms-3 submit-tambah">Tambah Produk</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
