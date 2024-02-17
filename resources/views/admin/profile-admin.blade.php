@@ -109,7 +109,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-4">
                 <div class="card">
                     <h5 class="card-header primary-btn">Produk UMKM</h5>
                     <div class="card-body">
