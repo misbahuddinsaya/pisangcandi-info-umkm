@@ -30,17 +30,15 @@
         </div>
     </div>
 </section>
-<section class="featured spad">
+<section class="categories">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section-title">
-                    <h2>Produk UMKM</h2>
-                </div>
-            </div>
+        <div class="section-title">
+            <h2>Produk UMKM</h2>
         </div>
         <div class="row">
-            @include('partials.produk')
+            <div class="categories__slider owl-carousel">
+                @include('partials.produk')
+            </div>
         </div>
     </div>
 </section>
