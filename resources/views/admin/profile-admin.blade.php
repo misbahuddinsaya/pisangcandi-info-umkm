@@ -20,14 +20,22 @@
 <section class="produk-add mt-5 mb-5">
     <div class="container-produk-add">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-4">
                 <div class="card">
+                    <div class="card-header">Tambah UMKM</div>
                     <div class="card-body">
                         <form class="row g-3 needs-validation" novalidate action="https://pisangcandi-umkminfo.vercel.app/simpan-produk" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="col-md-12 mb-2">
-                                <label for="nama_produk">Nama Produk</label>
+                                <label for="nama_produk">Nama UMKM</label>
                                 <input type="text" class="form-control" id="nama_produk" name="namaProduk" required value="">
+                                <div class="invalid-feedback">
+                                    Please choose a username.
+                                </div>
+                            </div>
+                            <div class="col-md-12 mb-2">
+                                <label for="keterangan_produk">Pemilik UMKM</label>
+                                <input type="text" class="form-control" id="keterangan_produk" name="keterangan_produk" required>
                                 <div class="invalid-feedback">
                                     Please choose a username.
                                 </div>
@@ -95,14 +103,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-<section class="produk-add mt-5 mb-5">
-    <div class="container-produk-add">
-        <div class="row">
-            <!-- Right Column - Product Table -->
-            <div class="col-lg-12">
+            <div class="col-lg-6">
                 <div class="card">
                     <h5 class="card-header primary-btn">Produk UMKM</h5>
                     <div class="card-body">
@@ -146,6 +147,14 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+<section class="produk-add mt-5 mb-5">
+    <div class="container-produk-add">
+        <div class="row">
+            <!-- Right Column - Product Table -->
+
         </div>
     </div>
 </section>
