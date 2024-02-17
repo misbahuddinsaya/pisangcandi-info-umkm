@@ -109,7 +109,15 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3">
+
+        </div>
+    </div>
+</section>
+<section class="produk-add mt-5 mb-5">
+    <div class="container-produk-add">
+        <div class="row">
+            <!-- Right Column - Product Table -->
+            <div class="col-lg-12">
                 <div class="card">
                     <h5 class="card-header primary-btn">Produk UMKM</h5>
                     <div class="card-body">
@@ -153,14 +161,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-<section class="produk-add mt-5 mb-5">
-    <div class="container-produk-add">
-        <div class="row">
-            <!-- Right Column - Product Table -->
-
         </div>
     </div>
 </section>
