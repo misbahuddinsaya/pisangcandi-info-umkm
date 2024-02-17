@@ -126,7 +126,7 @@
             <!-- Right Column - Product Table -->
             <div class="col-lg-12">
                 <div class="card">
-                    <h5 class="card-header primary-btn">Produk UMKM</h5>
+                    <h5 class="card-header primary-btn">Daftar UMKM</h5>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-hover">
@@ -149,7 +149,7 @@
                                     <tr>
                                         <th class="text-center">{{ $count++ }}</th>
                                         <td class="text-center">{{ $item['nama_umkm'] }}</td>
-                                        <td class="text-center">{{ $item['kode_user'] }}</td>
+                                        <td class="text-center">{{ $item['nama_pemilik'] }}</td>
                                         <td class="text-center">{{ $item['alamat'] }}</td>
                                         <td class="text-center">{{ $item['nomer_tlp'] }}</td>
                                         <td class="text-center">

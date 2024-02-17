@@ -18,7 +18,7 @@ class AdminController extends Controller
     }
     public function index()
     {
-        $reference = $this->database->getReference('tb_umkm');
+        $reference = $this->database->getReference('tb_daftarproduk');
         $data = $reference->getValue();
 
         $referenceKategori = $this->database->getReference('tb_kategori');
