@@ -30,9 +30,6 @@
         </div>
     </div>
 </section>
-<section class="categories mt-3">
-    @include('partials.daftar-umkm')
-</section>
 <section class="featured spad">
     <div class="container">
         <div class="row">
