@@ -102,14 +102,14 @@
                                     </div>
 
                                 </div>
-                                <div class="col-md-12 ">
+                                <div class="col ">
                                     <button type="submit" class="btn primary-btn ms-3 submit-tambah">Tambah Produk</button>
                                 </div>
                         </form>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <div class="card">
                     <h5 class="card-header primary-btn">Produk UMKM</h5>
                     <div class="card-body">
