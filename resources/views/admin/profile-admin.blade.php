@@ -22,23 +22,38 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
-                    <div class="card-header primary-btn">Tambah User</div>
+                    <div class="card-header primary-btn">Tambah UMKM</div>
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
                                 <form action="https://pisangcandi-umkminfo.vercel.app/simpan-user" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="mb-2">
-                                        <label for="namaUmkm" class="form-label">Nama User</label>
+                                        <label for="namaUmkm" class="form-label">Nama UMKM</label>
                                         <input type="text" class="form-control" id="nama_user" placeholder="" name="nama_user" value="">
                                     </div>
                                     <div class="mb-2">
-                                        <label for="alamat" class="form-label">Username</label>
+                                        <label for="alamat" class="form-label">Pemilik</label>
                                         <input type="text" class="form-control" id="username" placeholder="" name="username" value="">
                                     </div>
                                     <div class="mb-2">
-                                        <label for="no_tlp" class="form-label">Password</label>
+                                        <label for="no_tlp" class="form-label">Nomer Telepon</label>
                                         <input type="password" class="form-control" id="password" placeholder="" name="password" required value="">
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="no_tlp" class="form-label">Alamat</label>
+                                        <input type="password" class="form-control" id="password" placeholder="" name="password" required value="">
+                                    </div>
+                                    <div class="col-md-12 mb-2">
+                                        <select class="form-select" id="kategori_produk" name="kategori_produk" aria-label="Large select example" required>
+                                            <option selected disabled>-- Pilih Kategori --</option>
+                                            @foreach ($dataKategori as $item)
+                                            <option value="{{$item['kode']}}">{{$item['nama_kategori']}}</option>
+                                            @endforeach
+                                        </select>
+                                        <div class="invalid-feedback">
+                                            Please choose a username.
+                                        </div>
                                     </div>
                                     <div class="mb-2">
                                         <label for="jumlah_produk" class="form-label">Role User</label>

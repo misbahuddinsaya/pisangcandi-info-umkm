@@ -80,6 +80,7 @@ class AuthController extends Controller
         // Hapus data pengguna dari sesi
         Session::forget('user');
         Session::forget('user_level');
+        Session::forget('umkm_data');
 
         // Redirect ke halaman login atau halaman lain yang sesuai
         return redirect('/')->with('success', 'Logout berhasil');
