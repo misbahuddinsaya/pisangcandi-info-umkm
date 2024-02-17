@@ -151,7 +151,7 @@
                                         <td class="text-center">{{ $item['nama_produk'] }}</td>
                                         <td class="text-center">{{ $item['nama_pemilik'] }}</td>
                                         <td class="text-center">{{ $item['alamat'] }}</td>
-                                        <td class="text-center">{{ $item['nomer_whatsapp'] }}</td>
+                                        <td class="text-center">{{ $item['no_whatsapp'] }}</td>
                                         <td class="text-center">
                                             <a href="{{ route('umkm-hapus', ['id' => $item['kode_umkm']]) }}" class="delete-icon"><i class="fa fa-trash text-danger"></i></a>
                                         </td>
