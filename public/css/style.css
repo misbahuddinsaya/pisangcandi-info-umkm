@@ -821,12 +821,12 @@ ol {
 	width: 30px;
 	line-height: 70px;
 	text-align: center;
-	border: 1px solid #ebebeb;
+	border: 1px solid transparent;
 	position: absolute;
 	left: -35px;
 	top: 50%;
 	-webkit-transform: translateY(-35px);
-	background: #ffffff;
+	background: transparent;
 }
 
 .categories__slider.owl-carousel .owl-nav button.owl-next {
