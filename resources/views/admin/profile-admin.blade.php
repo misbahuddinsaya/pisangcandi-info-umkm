@@ -24,7 +24,7 @@
                 <div class="card">
                     <div class="card-header primary-btn">Tambah UMKM</div>
                     <div class="card-body">
-                        <form class="row g-3 needs-validation" novalidate action="https://pisangcandi-umkminfo.vercel.app/simpan-produk" method="POST" enctype="multipart/form-data">
+                        <form class="row g-3 needs-validation" novalidate action="https://pisangcandi-umkminfo.vercel.app/simpan-daftar-umkm" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-md-6">
@@ -36,8 +36,15 @@
                                         </div>
                                     </div>
                                     <div class="mb-2">
-                                        <label for="keterangan_produk">Pemilik UMKM</label>
-                                        <input type="text" class="form-control" id="keterangan_produk" name="keterangan_produk" required>
+                                        <label for="nama_pemilik">Pemilik UMKM</label>
+                                        <input type="text" class="form-control" id="nama_pemilik" name="nama_pemilik" required>
+                                        <div class="invalid-feedback">
+                                            Please choose a username.
+                                        </div>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="alamat">Alamat UMKM</label>
+                                        <input type="text" class="form-control" id="alamat" name="alamat" required>
                                         <div class="invalid-feedback">
                                             Please choose a username.
                                         </div>
