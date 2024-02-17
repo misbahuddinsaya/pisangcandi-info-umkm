@@ -24,34 +24,37 @@ class AuthController extends Controller
         $username = $request->input('username');
         $password = $request->input('password');
 
+        // Ambil data pengguna dari database
         $referenceUser = $this->database->getReference('tb_userumkm');
         $dataUser = $referenceUser->getValue();
 
+        // Periksa apakah ada data pengguna
         if ($dataUser === null || empty($dataUser)) {
             return redirect('/login')->with('error', 'Tidak ada data pengguna.');
         }
 
-        // Mencari data pengguna berdasarkan username
+        // Mencari data pengguna berdasarkan username dan password
         $matchedUser = null;
-        foreach ($dataUser as $key => $userData) {
+        foreach ($dataUser as $userData) {
             if ($userData['username'] === $username && $userData['password'] === $password) {
                 $matchedUser = $userData;
                 break;
             }
         }
 
+        // Jika data pengguna cocok
         if ($matchedUser !== null) {
-            // Data pengguna sesuai, simpan informasi pengguna ke dalam sesi
+            // Simpan informasi pengguna ke dalam session
             Session::put('user', $matchedUser);
 
-            // Jika level pengguna ada, simpan juga level ke dalam sesi
-            $userLevel = $matchedUser['role'] ?? null;
-            Session::put('user_level', $userLevel);
+            // Ambil role pengguna
+            $userRole = $matchedUser['role'] ?? null;
+            // Simpan role pengguna ke dalam session
+            Session::put('user_role', $userRole);
 
             // Ambil kode_user untuk mencari data di tb_umkm
             $kodeUser = $matchedUser['kode_user'] ?? null;
 
-            // dd($kodeUser);
             // Ambil data dari tb_umkm dengan mencocokkan kode_user
             $dataUmkm = null;
             foreach ($this->database->getReference('tb_umkm')->getValue() as $umkmData) {
@@ -61,15 +64,15 @@ class AuthController extends Controller
                 }
             }
 
+            // Jika data UMKM ditemukan, simpan ke dalam session
             if ($dataUmkm !== null) {
-                // Data tb_umkm ditemukan, simpan ke dalam sesi atau lakukan sesuai kebutuhan
                 Session::put('umkm_data', $dataUmkm);
             }
 
-            // Redirect ke dashboard atau lakukan hal lain setelah login berhasil
+            // Redirect ke halaman utama setelah login berhasil
             return redirect('/')->with('success', 'Login berhasil');
         } else {
-            // Data pengguna tidak sesuai
+            // Jika data pengguna tidak cocok, kembalikan ke halaman login dengan pesan error
             return redirect('/login')->with('error', 'Username atau password salah');
         }
     }
