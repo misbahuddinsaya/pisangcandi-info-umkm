@@ -4,7 +4,11 @@
 <section class="hero">
     <div class="section-title">
         <h3>SELAMAT DATANG</h3>
+<<<<<<< HEAD
         <h2>UMKM RW.04 PISANG CANDI s</h2>
+=======
+        <h2>UMKM RW.04 PISANG CANDI</h2>
+>>>>>>> 22858933759d380d48353ae9de21122c1229d90e
     </div>
     <div class="container">
         <div id="carouselExample" class="carousel slide" data-ride="carousel">
