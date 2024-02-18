@@ -14,7 +14,9 @@
                 </div>
                         </div>
                         <div class="col-lg-6">
-                            Logo RW 04
+                        <div class="header__logo">
+                    <a href="/"><img src="/img/logounmer.png" alt=""></a>
+                </div>
                         </div>
                     </div>
                 </div>
