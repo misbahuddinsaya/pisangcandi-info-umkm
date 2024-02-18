@@ -9,7 +9,9 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-6">
-                            Logo Universitas
+                        <div class="header__logo">
+                    <a href="/"><img src="/img/Logo_Unmer_resmi.png" alt=""></a>
+                </div>
                         </div>
                         <div class="col-lg-6">
                             Logo RW 04
