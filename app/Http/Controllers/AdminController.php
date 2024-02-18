@@ -79,7 +79,7 @@ class AdminController extends Controller
     public function hapusUmkm($id)
     {
 
-        $referenceProduk = $this->database->getReference('tb_produk/' . $id);
+        $referenceProduk = $this->database->getReference('tb_daftarproduk/' . $id);
 
         // Check if the data exists before attempting to delete
         $existingData = $referenceProduk->getValue();
