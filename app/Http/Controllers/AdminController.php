@@ -135,7 +135,6 @@ class AdminController extends Controller
                 'nama_produk' => $request->namaProduk,
                 'deskripsi' => $request->deskripsi,
                 'kategori' => $request->kategori_produk,
-                'harga' => $request->harga_produk,
                 'keterangan' => $request->keterangan_produk,
                 'foto_produk' => $fileUrl,
                 'alamat' => $request->alamat,

@@ -35,7 +35,6 @@
             <div class="col-lg-6 col-md-6">
                 <div class="product__details__text">
                     <h3>{{$produk['nama_produk']}}</h3>
-                    <div class="product__details__price">Rp {{ number_format($produk['harga'], 0, ',', '.') }}</div>
                     <P>Keterangan Produk: {{$produk['keterangan']}}</P>
                     <h5>Alamat UMKM:</h5>
                     <p>{{$produk['alamat']}}</p>

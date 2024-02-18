@@ -73,13 +73,6 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-2">
-                                        <label for="harga_produk">Harga Produk</label>
-                                        <input type="number" class="form-control" id="harga_produk" name="harga_produk" required>
-                                        <div class="invalid-feedback">
-                                            Please choose a username.
-                                        </div>
-                                    </div>
-                                    <div class="mb-2">
                                         <label for="deskripsi">Deskripsi</label>
                                         <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3" required></textarea>
                                         <div class="invalid-feedback">
