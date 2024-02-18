@@ -4,7 +4,7 @@
 <section class="hero">
     <div class="section-title">
         <h3>SELAMAT DATANG</h3>
-        <h2>UMKM RW.04 PISANG CANDI TES</h2>
+        <h2>UMKM RW.04 PISANG CANDI s</h2>
     </div>
     <div class="container">
         <div id="carouselExample" class="carousel slide" data-ride="carousel">
