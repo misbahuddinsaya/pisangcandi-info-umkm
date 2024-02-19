@@ -10,7 +10,7 @@
         <div id="carouselExample" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <div class="hero__item set-bg" data-setbg="/img/hero/bannerherro1.jpg">
+                    <div class="hero__item set-bg" data-setbg="/img/hero/bannerhero1.jpg">
                         <div class="hero__text">
                             <span></span>
                             <h2> <br /></h2>
@@ -40,7 +40,7 @@
                         </div>
                     </div>
                 </div><div class="carousel-item">
-                    <div class="hero__item set-bg" data-setbg="/img/hero/bannerhero5.jpwg">
+                    <div class="hero__item set-bg" data-setbg="/img/hero/bannerhero5.jpeg">
                         <div class="hero__text">
                             <span></span>
                             <h2><br /></h2>
