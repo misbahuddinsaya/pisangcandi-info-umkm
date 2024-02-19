@@ -29,7 +29,15 @@
                         <img class="product__details__pic__item--large" src="<?= $produk['foto_produk']; ?>" alt="">
                     </div>
                     <div class="product__details__pic__slider owl-carousel">
-                    </div>
+                            <img data-imgbigurl="img/product/details/product-details-2.jpg"
+                                src="<?= $produk['foto_produk']; ?>" alt="">
+                            <img data-imgbigurl="img/product/details/product-details-3.jpg"
+                                src="<?= $produk['foto_produk']; ?>" alt="">
+                            <img data-imgbigurl="img/product/details/product-details-5.jpg"
+                                src="<?= $produk['foto_produk']; ?>" alt="">
+                            <img data-imgbigurl="img/product/details/product-details-4.jpg"
+                                src="<?= $produk['foto_produk']; ?>" alt="">
+                        </div>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6">
