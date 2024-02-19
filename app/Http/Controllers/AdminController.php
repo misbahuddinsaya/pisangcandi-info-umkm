@@ -109,7 +109,7 @@ class AdminController extends Controller
         }
         $newKode = $this->generateNewCodeDaftarUmkm($lastKode);
         // Handle file upload
-        $uploadedFile = $request->file('file');
+        $uploadedFile = $request->file('fileproduk1');
         $namaProdukBaru = str_replace(' ', '', $request->namaProduk);
         $extension = $uploadedFile->getClientOriginalExtension();
         $namaFoto = 'UMKM-' . $namaProdukBaru . '-' . time() . '.' . $extension;
