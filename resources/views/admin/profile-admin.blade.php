@@ -107,13 +107,6 @@
                                             Please choose a username.
                                         </div>
                                     </div>
-                                    <div class="mb-2">
-                                        <label for="formFile3" class="form-label">Gambar Produk 3</label>
-                                        <input class="form-control" type="file" id="formFile3" name="fileproduk3" required>
-                                        <div class="invalid-feedback">
-                                            Please choose a username.
-                                        </div>
-                                    </div>
                                 </div>
                                 <div class="col ">
                                     <button type="submit" class="btn primary-btn ms-3 submit-tambah">Tambah Produk</button>
