@@ -9,7 +9,7 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                        <div class="logo-umkm" style="max-width: 105px;">
+                        <div class="logo-umkm" style="max-width: 100px;">
                     <a href="/"><img src="/img/Logo_Unmer_resmi.png" alt=""></a>
                 </div>
                         </div>
