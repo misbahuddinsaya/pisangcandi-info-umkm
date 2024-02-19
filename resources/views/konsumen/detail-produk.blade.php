@@ -29,8 +29,10 @@
                         <img class="product__details__pic__item--large" src="<?= $produk['foto_produk1']; ?>" alt="">
                     </div>
                     <div class="product__details__pic__slider owl-carousel">
-                            <img data-imgbigurl="img/product/details/product-details-2.jpg"
+                            <img data-imgbigurl="<?= $produk['foto_produk2']; ?>"
                                 src="<?= $produk['foto_produk2']; ?>" alt="">
+                            <img data-imgbigurl="<?= $produk['foto_produk1']; ?>"
+                                src="<?= $produk['foto_produk1']; ?>" alt="">
                     </div>
                 </div>
             </div>
