@@ -18,7 +18,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <div class="hero__item set-bg" data-setbg="/img/hero/bannerhero2.png">
+                    <div class="hero__item set-bg" data-setbg="/img/hero/bannerhero2.jpeg">
                         <div class="hero__text">
                             <span></span>
                             <h2><br /></h2>
@@ -26,21 +26,21 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <div class="hero__item set-bg" data-setbg="/img/hero/bannerhero3.png">
+                    <div class="hero__item set-bg" data-setbg="/img/hero/bannerhero3.jpeg">
                         <div class="hero__text">
                             <span></span>
                             <h2><br /></h2>
                         </div>
                     </div>
                 </div><div class="carousel-item">
-                    <div class="hero__item set-bg" data-setbg="/img/hero/bannerhero4.png">
+                    <div class="hero__item set-bg" data-setbg="/img/hero/bannerhero4.jpeg">
                         <div class="hero__text">
                             <span></span>
                             <h2><br /></h2>
                         </div>
                     </div>
                 </div><div class="carousel-item">
-                    <div class="hero__item set-bg" data-setbg="/img/hero/bannerhero5.png">
+                    <div class="hero__item set-bg" data-setbg="/img/hero/bannerhero5.jpwg">
                         <div class="hero__text">
                             <span></span>
                             <h2><br /></h2>
