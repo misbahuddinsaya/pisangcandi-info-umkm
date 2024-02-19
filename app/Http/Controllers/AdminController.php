@@ -112,7 +112,7 @@ class AdminController extends Controller
         $uploadedFile = $request->file('fileproduk1');
         $namaProdukBaru = str_replace(' ', '', $request->namaProduk);
         $extension = $uploadedFile->getClientOriginalExtension();
-        $namaFoto = 'UMKM-' . $namaProdukBaru . '-' . time() . '.' . $extension;
+        $namaFoto = 'UMKM1-' . $namaProdukBaru . '-' . time() . '.' . $extension;
 
         // Konfigurasi Firebase
         $factory = (new Factory)->withServiceAccount(__DIR__ . '/firebase_credentials.json');
@@ -133,7 +133,7 @@ class AdminController extends Controller
         $uploadedFile2 = $request->file('fileproduk2');
         $namaProdukBaru2 = str_replace(' ', '', $request->namaProduk);
         $extension2 = $uploadedFile2->getClientOriginalExtension();
-        $namaFoto2 = 'UMKM-' . $namaProdukBaru2 . '-' . time() . '.' . $extension2;
+        $namaFoto2 = 'UMKM2-' . $namaProdukBaru2 . '-' . time() . '.' . $extension2;
 
         // Konfigurasi Firebase
         $factory2 = (new Factory)->withServiceAccount(__DIR__ . '/firebase_credentials.json');
