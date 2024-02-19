@@ -94,15 +94,15 @@
                                         </div>
                                     </div>
                                     <div class="mb-2">
-                                        <label for="formFile" class="form-label">Gambar Produk 1</label>
-                                        <input class="form-control" type="file" id="formFile" name="fileproduk1" required>
+                                        <label for="formFile1" class="form-label">Gambar Produk 1</label>
+                                        <input class="form-control" type="file" id="formFile1" name="fileproduk1" required>
                                         <div class="invalid-feedback">
                                             Please choose a username.
                                         </div>
                                     </div>
                                     <div class="mb-2">
-                                        <label for="formFile" class="form-label">Gambar Produk 2</label>
-                                        <input class="form-control" type="file" id="formFile" name="fileproduk2" required>
+                                        <label for="formFile2" class="form-label">Gambar Produk 2</label>
+                                        <input class="form-control" type="file" id="formFile2" name="fileproduk2" required>
                                         <div class="invalid-feedback">
                                             Please choose a username.
                                         </div>
