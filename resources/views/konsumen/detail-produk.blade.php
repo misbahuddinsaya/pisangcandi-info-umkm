@@ -31,8 +31,6 @@
                     <div class="product__details__pic__slider owl-carousel">
                             <img data-imgbigurl="img/product/details/product-details-2.jpg"
                                 src="<?= $produk['foto_produk2']; ?>" alt="">
-                            <img data-imgbigurl="img/product/details/product-details-3.jpg"
-                                src="<?= $produk['foto_produk3']; ?>" alt="">
                     </div>
                 </div>
             </div>

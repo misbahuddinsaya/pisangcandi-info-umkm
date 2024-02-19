@@ -132,43 +132,24 @@ class AdminController extends Controller
         // File Produk 2
         $uploadedFile2 = $request->file('fileproduk2');
         $namaProdukBaru2 = str_replace(' ', '', $request->namaProduk);
-        $extension = $uploadedFile2->getClientOriginalExtension();
-        $namaFoto2 = 'UMKM-' . $namaProdukBaru2 . '-' . time() . '.' . $extension;
+        $extension2 = $uploadedFile2->getClientOriginalExtension();
+        $namaFoto2 = 'UMKM-' . $namaProdukBaru2 . '-' . time() . '.' . $extension2;
 
         // Konfigurasi Firebase
-        $factory = (new Factory)->withServiceAccount(__DIR__ . '/firebase_credentials.json');
+        $factory2 = (new Factory)->withServiceAccount(__DIR__ . '/firebase_credentials.json');
         
         // Simpan file ke Firebase Storage
-        $storage = $factory->createStorage();
-        $bucket = $storage->getBucket('umkm-9256e.appspot.com');
-        $object = $bucket->upload(
-            fopen($uploadedFile->getRealPath(), 'r'),
+        $storage2 = $factory2->createStorage();
+        $bucket2 = $storage2->getBucket('umkm-9256e.appspot.com');
+        $object2 = $bucket2->upload(
+            fopen($uploadedFile2->getRealPath(), 'r'),
             [
                 'name' => 'Umkm/' . $namaFoto2
             ]
         );
         // Dapatkan URL file yang diunggah
-        $fileUrl2 = $object->signedUrl(new \DateTime('+10 years'));
-        // File Produk 3
-        $uploadedFile3 = $request->file('fileproduk2');
-        $namaProdukBaru3 = str_replace(' ', '', $request->namaProduk);
-        $extension = $uploadedFile3->getClientOriginalExtension();
-        $namaFoto = 'UMKM-' . $namaProdukBaru3 . '-' . time() . '.' . $extension;
+        $fileUrl2 = $object2->signedUrl(new \DateTime('+10 years'));
 
-        // Konfigurasi Firebase
-        $factory = (new Factory)->withServiceAccount(__DIR__ . '/firebase_credentials.json');
-        
-        // Simpan file ke Firebase Storage
-        $storage = $factory->createStorage();
-        $bucket = $storage->getBucket('umkm-9256e.appspot.com');
-        $object = $bucket->upload(
-            fopen($uploadedFile->getRealPath(), 'r'),
-            [
-                'name' => 'Umkm/' . $namaFoto
-            ]
-        );
-        // Dapatkan URL file yang diunggah
-        $fileUrl3 = $object->signedUrl(new \DateTime('+10 years'));
         // dd($newKode);
         $newData = [
             $newKode => [
@@ -179,7 +160,6 @@ class AdminController extends Controller
                 'keterangan' => $request->keterangan_produk,
                 'foto_produk1' => $fileUrl1,
                 'foto_produk2' => $fileUrl2,
-                'foto_produk3' => $fileUrl3,
                 'alamat' => $request->alamat,
                 'nama_pemilik' => $request->nama_pemilik,
                 'instagram' => $request->instagram,
