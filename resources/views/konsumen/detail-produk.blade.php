@@ -26,18 +26,14 @@
             <div class="col-lg-6 col-md-6">
                 <div class="product__details__pic">
                     <div class="product__details__pic__item">
-                        <img class="product__details__pic__item--large" src="<?= $produk['foto_produk']; ?>" alt="">
+                        <img class="product__details__pic__item--large" src="<?= $produk['foto_produk1']; ?>" alt="">
                     </div>
                     <div class="product__details__pic__slider owl-carousel">
                             <img data-imgbigurl="img/product/details/product-details-2.jpg"
-                                src="<?= $produk['foto_produk']; ?>" alt="">
+                                src="<?= $produk['foto_produk2']; ?>" alt="">
                             <img data-imgbigurl="img/product/details/product-details-3.jpg"
-                                src="<?= $produk['foto_produk']; ?>" alt="">
-                            <img data-imgbigurl="img/product/details/product-details-5.jpg"
-                                src="<?= $produk['foto_produk']; ?>" alt="">
-                            <img data-imgbigurl="img/product/details/product-details-4.jpg"
-                                src="<?= $produk['foto_produk']; ?>" alt="">
-                        </div>
+                                src="<?= $produk['foto_produk3']; ?>" alt="">
+                    </div>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6">

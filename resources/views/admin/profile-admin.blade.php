@@ -94,13 +94,26 @@
                                         </div>
                                     </div>
                                     <div class="mb-2">
-                                        <label for="formFile" class="form-label">Pilih File</label>
-                                        <input class="form-control" type="file" id="formFile" name="file" required>
+                                        <label for="formFile" class="form-label">Gambar Produk 1</label>
+                                        <input class="form-control" type="file" id="formFile" name="fileproduk1" required>
                                         <div class="invalid-feedback">
                                             Please choose a username.
                                         </div>
                                     </div>
-
+                                    <div class="mb-2">
+                                        <label for="formFile" class="form-label">Gambar Produk 2</label>
+                                        <input class="form-control" type="file" id="formFile" name="fileproduk2" required>
+                                        <div class="invalid-feedback">
+                                            Please choose a username.
+                                        </div>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="formFile3" class="form-label">Gambar Produk 3</label>
+                                        <input class="form-control" type="file" id="formFile3" name="fileproduk3" required>
+                                        <div class="invalid-feedback">
+                                            Please choose a username.
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col ">
                                     <button type="submit" class="btn primary-btn ms-3 submit-tambah">Tambah Produk</button>

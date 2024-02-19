@@ -127,7 +127,48 @@ class AdminController extends Controller
             ]
         );
         // Dapatkan URL file yang diunggah
-        $fileUrl = $object->signedUrl(new \DateTime('+10 years'));
+        $fileUrl1 = $object->signedUrl(new \DateTime('+10 years'));
+
+        // File Produk 2
+        $uploadedFile2 = $request->file('fileproduk2');
+        $namaProdukBaru2 = str_replace(' ', '', $request->namaProduk);
+        $extension = $uploadedFile2->getClientOriginalExtension();
+        $namaFoto2 = 'UMKM-' . $namaProdukBaru2 . '-' . time() . '.' . $extension;
+
+        // Konfigurasi Firebase
+        $factory = (new Factory)->withServiceAccount(__DIR__ . '/firebase_credentials.json');
+        
+        // Simpan file ke Firebase Storage
+        $storage = $factory->createStorage();
+        $bucket = $storage->getBucket('umkm-9256e.appspot.com');
+        $object = $bucket->upload(
+            fopen($uploadedFile->getRealPath(), 'r'),
+            [
+                'name' => 'Umkm/' . $namaFoto2
+            ]
+        );
+        // Dapatkan URL file yang diunggah
+        $fileUrl2 = $object->signedUrl(new \DateTime('+10 years'));
+        // File Produk 3
+        $uploadedFile3 = $request->file('fileproduk2');
+        $namaProdukBaru3 = str_replace(' ', '', $request->namaProduk);
+        $extension = $uploadedFile3->getClientOriginalExtension();
+        $namaFoto = 'UMKM-' . $namaProdukBaru3 . '-' . time() . '.' . $extension;
+
+        // Konfigurasi Firebase
+        $factory = (new Factory)->withServiceAccount(__DIR__ . '/firebase_credentials.json');
+        
+        // Simpan file ke Firebase Storage
+        $storage = $factory->createStorage();
+        $bucket = $storage->getBucket('umkm-9256e.appspot.com');
+        $object = $bucket->upload(
+            fopen($uploadedFile->getRealPath(), 'r'),
+            [
+                'name' => 'Umkm/' . $namaFoto
+            ]
+        );
+        // Dapatkan URL file yang diunggah
+        $fileUrl3 = $object->signedUrl(new \DateTime('+10 years'));
         // dd($newKode);
         $newData = [
             $newKode => [
@@ -136,7 +177,9 @@ class AdminController extends Controller
                 'deskripsi' => $request->deskripsi,
                 'kategori' => $request->kategori_produk,
                 'keterangan' => $request->keterangan_produk,
-                'foto_produk' => $fileUrl,
+                'foto_produk1' => $fileUrl1,
+                'foto_produk2' => $fileUrl2,
+                'foto_produk3' => $fileUrl3,
                 'alamat' => $request->alamat,
                 'nama_pemilik' => $request->nama_pemilik,
                 'instagram' => $request->instagram,
