@@ -14,7 +14,7 @@
                 </div>
                         </div>
                         <div class="col">
-                        <div class="logo-umkm" style="max-width: 105px;">
+                        <div class="logo-umkm" style="max-width: 106px;">
                     <a href="/"><img src="/img/logoumer.png" alt=""></a>
                 </div>
                         </div>
