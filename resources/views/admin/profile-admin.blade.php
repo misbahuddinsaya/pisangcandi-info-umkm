@@ -30,7 +30,7 @@
                                 <div class="col-md-6">
                                     <div class="mb-2">
                                         <label for="nama_produk">Nama UMKM</label>
-                                        <input type="text" class="form-control" id="nama_produk" name="namaProduk" required value="">
+                                        <input type="text" class="form-control" id="nama_produk" name="namaProduk" required value="<?= $productData['nama_produk']; ?>">
                                         <div class="invalid-feedback">
                                             Please choose a username.
                                         </div>
@@ -153,7 +153,7 @@
                                         <td class="text-center">{{ $item['no_whatsapp'] }}</td>
                                         <td class="text-center">
                                             <a href="{{ route('umkm-hapus', ['id' => $item['kode_produk']]) }}" class="delete-icon"><i class="fa fa-trash text-danger"></i></a>
-                                            <a href="{{ route('umkm-hapus', ['id' => $item['kode_produk']]) }}" class="delete-icon"><i class="fa fa-edit text-warning"></i></a>
+                                            <a href="{{ route('umkm-edit', ['id' => $item['kode_produk']]) }}" class="delete-icon"><i class="fa fa-edit text-warning"></i></a>
                                         </td>
                                     </tr>
                                     @endforeach
