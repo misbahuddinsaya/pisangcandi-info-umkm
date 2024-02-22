@@ -153,7 +153,7 @@
                                         <td class="text-center">{{ $item['no_whatsapp'] }}</td>
                                         <td class="text-center">
                                             <a href="{{ route('umkm-hapus', ['id' => $item['kode_produk']]) }}" class="delete-icon"><i class="fa fa-trash text-danger"></i></a>
-                                            <a href="{{ route('umkm-hapus', ['id' => $item['kode_produk']]) }}" class="delete-icon"><i class="fa fa-pen text-warning"></i></a>
+                                            <a href="{{ route('umkm-hapus', ['id' => $item['kode_produk']]) }}" class="delete-icon"><i class="fa fa-edit text-warning"></i></a>
                                         </td>
                                     </tr>
                                     @endforeach
