@@ -59,17 +59,7 @@
                                     <div class="mb-2">
                                         <label for="kategori_produk" class="form-label">Kategori Produk</label>
                                     </div>
-                                    <div class="mb-2">
-                                        <select class="form-select" id="kategori_produk" name="kategori_produk" aria-label="Large select example" required>
-                                            <option selected disabled>-- Pilih Kategori --</option>
-                                            @foreach ($productData as $item)
-                                            <option value="{{$item['kategori_produk']}}">{{$item['kategori_produk']}}</option>
-                                            @endforeach
-                                        </select>
-                                        <div class="invalid-feedback">
-                                            Masukan Kategori Produk.
-                                        </div>
-                                    </div>
+                                    
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-2">
