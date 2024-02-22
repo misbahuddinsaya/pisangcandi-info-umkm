@@ -193,6 +193,6 @@ class AdminController extends Controller
         $referenceProduk = $this->database->getReference('tb_daftarproduk/' . $id);
         $productData = $referenceProduk->getValue();
 
-        return view('admin.profile-admin', compact('productData'));
+        return view('admin.edit-admin', compact('productData'));
     }
 }

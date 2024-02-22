@@ -37,6 +37,6 @@ Route::get('/produk-UMKM/{id}', [PelakuController::class, 'deleteData'])->name('
 Route::get('/produk-UMKM/edit/{id}', [PelakuController::class, 'editData'])->name('produk-edit');
 Route::get('/detail-umkm/{id}', [PelakuController::class, 'detailUmkm'])->name('umkm-detail');
 Route::get('/profile-admin/hapus-umkm/{id}', [AdminController::class, 'hapusUmkm'])->name('umkm-hapus');
-Route::get('/profile-admin/hapus-umkm/{id}', [AdminController::class, 'editData'])->name('umkm-edit');
+Route::get('/profile-admin/edit-umkm/{id}', [AdminController::class, 'editData'])->name('umkm-edit');
 Route::post('/login-user', [AuthController::class, 'login'])->name('login-user');
 Route::get('/logout-user', [AuthController::class, 'logout'])->name('logout-user');
