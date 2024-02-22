@@ -188,4 +188,11 @@ class AdminController extends Controller
 
         return $newKode;
     }
+    public function editData($id)
+    {
+        $referenceProduk = $this->database->getReference('tb_daftarproduk/' . $id);
+        $productData = $referenceProduk->getValue();
+
+        return view('admin.profile-admin', ['[dataUmkm]' => $productData]);
+    }
 }

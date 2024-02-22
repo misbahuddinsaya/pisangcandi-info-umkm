@@ -108,7 +108,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col ">
+                                <div class="col">
                                     <button type="submit" class="btn primary-btn ms-3 submit-tambah">Tambah Produk</button>
                                 </div>
                         </form>
@@ -153,6 +153,7 @@
                                         <td class="text-center">{{ $item['no_whatsapp'] }}</td>
                                         <td class="text-center">
                                             <a href="{{ route('umkm-hapus', ['id' => $item['kode_produk']]) }}" class="delete-icon"><i class="fa fa-trash text-danger"></i></a>
+                                            <a href="{{ route('umkm-hapus', ['id' => $item['kode_produk']]) }}" class="delete-icon"><i class="fa fa-pen text-warning"></i></a>
                                         </td>
                                     </tr>
                                     @endforeach
