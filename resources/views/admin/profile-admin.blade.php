@@ -30,7 +30,7 @@
                                 <div class="col-md-6">
                                     <div class="mb-2">
                                         <label for="nama_produk">Nama UMKM</label>
-                                        <input type="text" class="form-control" id="nama_produk" name="namaProduk" required value="{{ $productData('nama_produk') }}">
+                                        <input type="text" class="form-control" id="nama_produk" name="namaProduk" required value="{{ $dataUmkm('nama_produk') }}">
                                         <div class="invalid-feedback">
                                             Please choose a username.
                                         </div>
