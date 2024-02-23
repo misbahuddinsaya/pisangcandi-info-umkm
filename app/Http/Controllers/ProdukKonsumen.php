@@ -51,7 +51,7 @@ class ProdukKonsumen extends Controller
         $totalProduk = is_array($dataProduk) ? count($dataProduk) : 0;
 
         return view('konsumen.produk-konsumen', [
-            'dataProduk' => $dataProduk,
+            'datasaya' => $dataProduk,
             'totalProduk' => $totalProduk,
             'dataKategori' => $dataKategori,
             'selectedKategori' => $selectedKategori, // Untuk menjaga selected option di dropdown
