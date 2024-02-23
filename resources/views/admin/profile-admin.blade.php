@@ -143,8 +143,8 @@
                                     @php
                                     $count = 1;
                                     @endphp
-                                    @if ($dataDaftar)
-                                    @foreach ($dataDaftar as $item)
+                                    @if ($dataUmkm)
+                                    @foreach ($dataUmkm as $item)
                                     <tr>
                                         <th class="text-center">{{ $count++ }}</th>
                                         <td class="text-center">{{ $item['nama_produk'] }}</td>
