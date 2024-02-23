@@ -54,7 +54,7 @@
                                         <label for="keterangan_produk">Keterangan Produk</label>
                                         <input type="text" class="form-control" id="keterangan_produk" name="keterangan_produk" required value="{{ $productData['nama_produk'] }}">
                                         <div class="invalid-feedback">
-                                            Masukan Keterangan Produk.
+                                            Masukan Keterangan Produk UMKM.
                                         </div>
                                     </div>
                                 </div>
