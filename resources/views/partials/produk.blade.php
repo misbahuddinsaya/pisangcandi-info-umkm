@@ -1,12 +1,20 @@
-@if(isset($totalProduk) && $totalProduk > 0)
-    @foreach ($dataUmkmProduk as $produk)
-        <div class="col-lg-3 mb-5">
-                <h5><a href="{{ route('produk-info', ['id' => $produk['kode_produk']]) }}">{{ $produk['nama_produk'] }}</a></h5>
-            </div>
+@if ($produkUmkm && count($produkUmkm) > 0)
+@foreach ($produkUmkm as $item)
+<div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="product__item">
+        <div class="product__item__pic set-bg" data-setbg="<?= $item['foto_produk1']; ?>">
+            <ul class="product__item__pic__hover">
+                <li><a href=""><i class="fa fa-info"></i></a></li>
+            </ul>
         </div>
-    @endforeach
-@else
-    <div class="col-12">
-        <p class="text-center">Tidak Ada Produk UMKM</p>
+        <div class="product__item__text">
+            <a href="{{ route('produk-info', ['id' => $item['kode_produk']]) }}">{{ $item['nama_produk'] }}</a>
+        </div>
     </div>
+</div>
+@endforeach
+@else
+<div class="col-12">
+    <p class="text-center">Tidak Ada Produk UMKM</p>
+</div>
 @endif
