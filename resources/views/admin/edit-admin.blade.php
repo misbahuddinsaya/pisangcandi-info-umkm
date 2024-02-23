@@ -56,15 +56,11 @@
                                             Masukan Keterangan Produk.
                                         </div>
                                     </div>
-                                    <div class="mb-2">
-                                        <label for="kategori_produk" class="form-label">Kategori Produk</label>
-                                    </div>
-                                    
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-2">
                                         <label for="deskripsi">Deskripsi</label>
-                                        <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3" required></textarea>
+                                        <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3" required>{{ $productData['deskripsi'] }}</textarea>
                                         <div class="invalid-feedback">
                                             Masukan Deskripsi Produk.
                                         </div>
@@ -81,20 +77,6 @@
                                         <input type="number" class="form-control" id="no_whatsapp" name="no_whatsapp" required value="{{ $productData['no_whatsapp'] }}">
                                         <div class="invalid-feedback">
                                             Masukan Nomer Whatsapp.
-                                        </div>
-                                    </div>
-                                    <div class="mb-2">
-                                        <label for="formFile1" class="form-label">Gambar Produk 1</label>
-                                        <input class="form-control" type="file" id="formFile1" name="fileproduk1" required>
-                                        <div class="invalid-feedback">
-                                            Pilih Gambar.
-                                        </div>
-                                    </div>
-                                    <div class="mb-2">
-                                        <label for="formFile2" class="form-label">Gambar Produk 2</label>
-                                        <input class="form-control" type="file" id="formFile2" name="fileproduk2" required>
-                                        <div class="invalid-feedback">
-                                            Pilih Gambar.
                                         </div>
                                     </div>
                                 </div>
