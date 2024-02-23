@@ -24,7 +24,7 @@
                 <div class="card">
                     <div class="card-header primary-btn">Update UMKM</div>
                     <div class="card-body">
-                        <form class="row g-3 needs-validation" novalidate action="{{ secure(route('simpan-edit-umkm', ['id' => $productData['kode_produk']])) }}" method="POST" enctype="multipart/form-data">
+                        <form class="row g-3 needs-validation" novalidate action="https://pisangcandi-umkminfo.vercel.app/simpan-daftar-umkm/{{ $productData['kode_produk'] }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-md-6">
