@@ -195,4 +195,32 @@ class AdminController extends Controller
 
         return view('admin.edit-admin', compact('productData'));
     }
+
+    public function updateData(Request $request, $id) 
+    {
+        $namaProduk = $request->input('nama_produk');
+        $namaPemilik = $request->input('nama_pemilik');
+        $alamat = $request->input('alamat');
+        $keterangan = $request->input('keterangan_produk');
+        $deskripsi = $request->input('deskripsi');
+        $instagram = $request->input('instagram');
+        $nomer = $request->input('no_whatsapp');
+
+    // Mendapatkan referensi ke node yang akan diperbarui di Firebase Realtime Database
+        $referenceProduk = $this->database->getReference('tb_daftarproduk/' . $id);
+
+        $dataToUpdate = [
+            'nama_produk' => $namaProduk,
+            'nama_pemilik' => $namaPemilik,
+            'alamat' => $alamat,
+            'keterangan_produk' => $keterangan,
+            'deskripsi' => $deskripsi,
+            'instagram' => $instagram,
+            'no_whatsapp' => $nomer,
+            // Tambahkan bidang data lain sesuai kebutuhan
+        ];
+        $referenceProduk->update($dataToUpdate);
+
+        return redirect('/profile-admin');
+    }
 }
