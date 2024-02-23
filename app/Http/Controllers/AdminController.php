@@ -196,5 +196,66 @@ class AdminController extends Controller
         return view('admin.edit-admin', compact('productData'));
     }
 
-    
+    public function simpanEditData(Request $request, $id)
+    {
+        // Ambil referensi ke Firebase Realtime Database
+        $referenceProduk = $this->database->getReference('tb_daftarproduk');
+
+        // Dapatkan data produk berdasarkan ID
+        $productReference = $referenceProduk->getChild($id);
+        $existingData = $productReference->getValue();
+
+        // Periksa apakah data ada sebelum mencoba untuk menyimpan perubahan
+        if ($existingData !== null) {
+            // Handle file upload jika ada perubahan gambar
+            if ($request->hasFile('fileproduk1')) {
+                // Handle pengunggahan file dan dapatkan URL baru
+                $uploadedFile = $request->file('fileproduk1');
+                $namaProdukBaru = str_replace(' ', '', $existingData['nama_produk']);
+                $extension = $uploadedFile->getClientOriginalExtension();
+                $namaFotoBaru = 'UMKM1-' . $namaProdukBaru . '-' . time() . '.' . $extension;
+
+                // Konfigurasi Firebase
+                $factory = (new Factory)->withServiceAccount(__DIR__ . '/firebase_credentials.json');
+
+                // Simpan file ke Firebase Storage
+                $storage = $factory->createStorage();
+                $bucket = $storage->getBucket('umkm-9256e.appspot.com');
+                $object = $bucket->upload(
+                    fopen($uploadedFile->getRealPath(), 'r'),
+                    [
+                        'name' => 'Umkm/' . $namaFotoBaru
+                    ]
+                );
+
+                // Dapatkan URL file yang diunggah
+                $fileUrl1 = $object->signedUrl(new \DateTime('+10 years'));
+
+                // Update data dengan URL gambar yang baru
+                $existingData['foto_produk1'] = $fileUrl1;
+            }
+
+            // Update data yang diubah
+            $updatedData = [
+                'nama_produk' => $request->input('namaProduk', $existingData['nama_produk']),
+                'deskripsi' => $request->input('deskripsi', $existingData['deskripsi']),
+                'kategori' => $request->input('kategori_produk', $existingData['kategori']),
+                'keterangan' => $request->input('keterangan_produk', $existingData['keterangan']),
+                'alamat' => $request->input('alamat', $existingData['alamat']),
+                'nama_pemilik' => $request->input('nama_pemilik', $existingData['nama_pemilik']),
+                'instagram' => $request->input('instagram', $existingData['instagram']),
+                'no_whatsapp' => $request->input('no_whatsapp', $existingData['no_whatsapp']),
+                // Update data lainnya sesuai kebutuhan
+            ];
+
+            // Update data pada Firebase
+            $productReference->update($updatedData);
+
+            alert()->success('Berhasil', 'Data Umkm Berhasil di Perbarui.');
+            return redirect('/profile-admin');
+        } else {
+            // Jika data tidak ditemukan, mungkin tampilkan pesan error atau redirect ke halaman 404
+            return abort(404);
+        }
+    }
 }
