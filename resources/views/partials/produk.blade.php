@@ -1,8 +1,8 @@
 @if(isset($totalProduk) && $totalProduk > 0):
-@foreach ($dataUmkmProduk as $item)
+@foreach ($dataUmkmProduk as $dataUmkmProduk)
 <div class="col-lg-3 mb-5">
-    <div class="categories__item set-bg" data-setbg="<?= $item['foto_produk2']; ?>">
-        <h5><a href="{{ route('produk-info', ['id' => $item['kode_produk']]) }}">{{ $item['nama_produk'] }}</a></h5>
+    <div class="categories__item set-bg" data-setbg="<?= $data['foto_produk2']; ?>">
+        <h5><a href="{{ route('produk-info', ['id' => $data['kode_produk']]) }}">{{ $data['nama_produk'] }}</a></h5>
     </div>
 </div>
 @endforeach
