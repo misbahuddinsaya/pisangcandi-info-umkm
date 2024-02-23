@@ -23,10 +23,10 @@ class ProdukKonsumen extends Controller
 
         if ($data !== null) {
             $totalProduk = count($data);
-            return view('dashboard', ['dataProduk' => $data, 'totalProduk' => $totalProduk, 'dataUmkm' => $umkm]);
+            return view('dashboard', ['dataUmkmProduk' => $data, 'totalProduk' => $totalProduk, 'dataUmkm' => $umkm]);
         } else {
             // Jika data kosong, kirimkan array kosong ke view
-            return view('dashboard', ['dataProduk' => [], 'totalProduk' => 0, 'dataUmkm' => $umkm]);
+            return view('dashboard', ['dataUmkmProduk' => [], 'totalProduk' => 0, 'dataUmkm' => $umkm]);
         }
     }
 
