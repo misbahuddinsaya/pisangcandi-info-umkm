@@ -26,7 +26,7 @@
                     <div class="card-body">
                         <form class="row g-3 needs-validation" novalidate action="https://pisangcandi-umkminfo.vercel.app/profile-admin/update-umkm/{{ $productData['kode_produk'] }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            @method('PUT')
+                            @method('POST')
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-2">
