@@ -1,5 +1,5 @@
 @if(isset($totalProduk) && $totalProduk > 0):
-@foreach ($dataProduk as $produk)
+@foreach ($dataTes as $produk)
 <div class="col-lg-3 mb-5">
     <div class="categories__item set-bg" data-setbg="">
         <h5><a href="">{{ $produk['nama_produk'] }}</a></h5>
