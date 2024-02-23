@@ -143,7 +143,7 @@
                                     @php
                                     $count = 1;
                                     @endphp
-                                    @if ($dataUmkm)
+                                    @if ($dataDaftar)
                                     @foreach ($dataDaftar as $item)
                                     <tr>
                                         <th class="text-center">{{ $count++ }}</th>
