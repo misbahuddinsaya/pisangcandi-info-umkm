@@ -81,7 +81,7 @@
                                     </div>
                                 </div>
                                 <div class="col">
-                                    <button type="submit" class="btn primary-btn ms-3 submit-tambah">Tambah Produk</button>
+                                    <button type="submit" class="btn primary-btn ms-3 submit-tambah">Update Produk</button>
                                 </div>
                         </form>
                     </div>
