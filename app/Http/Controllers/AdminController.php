@@ -221,6 +221,6 @@ class AdminController extends Controller
         ];
         $referenceProduk->update($dataToUpdate);
 
-        return redirect('/profile-admin/update-umkm/'. $id);
+        return view('admin.profile-admin');
     }
 }
