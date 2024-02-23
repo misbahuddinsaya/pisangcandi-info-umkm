@@ -2,7 +2,7 @@
 @foreach ($dataProduk as $produk)
 <div class="col-lg-3 mb-5">
     <div class="categories__item set-bg" data-setbg="">
-        <h5><a href="{{ route('produk-info', ['id' => $produk['kode_produk']]) }}">{{ $produk['nama_produk'] }}</a></h5>
+        <h5><a href="">{{ $produk['nama_produk'] }}</a></h5>
     </div>
 </div>
 @endforeach
