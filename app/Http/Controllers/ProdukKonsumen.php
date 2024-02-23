@@ -23,10 +23,10 @@ class ProdukKonsumen extends Controller
 
         if ($data !== null) {
             $totalProduk = count($data);
-            return view('dashboard', ['dataUmkmProduk' => $data, 'totalProduk' => $totalProduk, 'dataUmkm' => $umkm]);
+            return view('dashboard', ['dataProduk' => $data, 'totalProduk' => $totalProduk, 'dataUmkm' => $umkm]);
         } else {
             // Jika data kosong, kirimkan array kosong ke view
-            return view('dashboard', ['dataUmkmProduk' => [], 'totalProduk' => 0, 'dataUmkm' => $umkm]);
+            return view('dashboard', ['dataProduk' => [], 'totalProduk' => 0, 'dataUmkm' => $umkm]);
         }
     }
 
@@ -51,7 +51,7 @@ class ProdukKonsumen extends Controller
         $totalProduk = is_array($dataProduk) ? count($dataProduk) : 0;
 
         return view('konsumen.produk-konsumen', [
-            'dataUmkmProduk' => $dataProduk,
+            'dataProduk' => $dataProduk,
             'totalProduk' => $totalProduk,
             'dataKategori' => $dataKategori,
             'selectedKategori' => $selectedKategori, // Untuk menjaga selected option di dropdown
