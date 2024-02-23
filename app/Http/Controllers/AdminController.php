@@ -197,30 +197,40 @@ class AdminController extends Controller
     }
 
     public function updateData(Request $request, $id) 
-    {
-        $namaProduk = $request->input('nama_produk');
-        $namaPemilik = $request->input('nama_pemilik');
-        $alamat = $request->input('alamat');
-        $keterangan = $request->input('keterangan_produk');
-        $deskripsi = $request->input('deskripsi');
-        $instagram = $request->input('instagram');
-        $nomer = $request->input('no_whatsapp');
+{
+    // Ambil data dari permintaan HTTP
+    $namaProduk = $request->input('nama_produk');
+    $namaPemilik = $request->input('nama_pemilik');
+    $alamat = $request->input('alamat');
+    $keterangan = $request->input('keterangan_produk');
+    $deskripsi = $request->input('deskripsi');
+    $instagram = $request->input('instagram');
+    $nomer = $request->input('no_whatsapp');
 
     // Mendapatkan referensi ke node yang akan diperbarui di Firebase Realtime Database
-        $referenceProduk = $this->database->getReference('tb_daftarproduk/' . $id);
+    $referenceProduk = $this->database->getReference('tb_daftarproduk/' . $id);
 
-        $dataToUpdate = [
-            'nama_produk' => $namaProduk,
-            'nama_pemilik' => $namaPemilik,
-            'alamat' => $alamat,
-            'keterangan_produk' => $keterangan,
-            'deskripsi' => $deskripsi,
-            'instagram' => $instagram,
-            'no_whatsapp' => $nomer,
-            // Tambahkan bidang data lain sesuai kebutuhan
-        ];
-        $referenceProduk->update($dataToUpdate);
+    $dataToUpdate = [
+        'nama_produk' => $namaProduk,
+        'nama_pemilik' => $namaPemilik,
+        'alamat' => $alamat,
+        'keterangan_produk' => $keterangan,
+        'deskripsi' => $deskripsi,
+        'instagram' => $instagram,
+        'no_whatsapp' => $nomer,
+        // Tambahkan bidang data lain sesuai kebutuhan
+    ];
 
-        return view('admin.profile-admin');
+    // Update data di Firebase Realtime Database
+    $updateResult = $referenceProduk->update($dataToUpdate);
+
+    // Periksa apakah data berhasil diperbarui
+    if ($updateResult) {
+        // Jika berhasil, kirim pesan sukses dan redirect ke halaman update-umkm
+        return redirect('/profile-admin/update-umkm/' . $id)->with('success', 'Data UMKM berhasil diperbarui!');
+    } else {
+        // Jika gagal, kirim pesan gagal dan redirect ke halaman update-umkm
+        return redirect('/profile-admin/update-umkm/' . $id)->with('error', 'Gagal memperbarui data UMKM. Silakan coba lagi.');
     }
+}
 }
