@@ -20,7 +20,7 @@
 <section class="produk-add mt-5 mb-5">
     <div class="container-produk-add">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header primary-btn">Update UMKM</div>
                     <div class="card-body">
