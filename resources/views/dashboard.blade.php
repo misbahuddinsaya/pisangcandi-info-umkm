@@ -3,7 +3,7 @@
 @section('content')
 <section class="hero">
     <div class="section-title">
-        <h3>SELAMAT DATANG</h3>
+        <h3>SELAMAT</h3>
         <h2>UMKM RW.04 PISANG CANDI</h2>
     </div>
     <div class="container">
